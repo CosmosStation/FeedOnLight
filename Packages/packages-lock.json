@@ -1,7 +1,11 @@
 {
   "dependencies": {
     "com.unity.burst": {
+<<<<<<< HEAD
       "version": "1.6.6",
+=======
+      "version": "1.6.5",
+>>>>>>> 4d2cbb0e94dd230a7b638dedb56a3b1b45008282
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -10,14 +14,22 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.cinemachine": {
+<<<<<<< HEAD
       "version": "2.8.6",
+=======
+      "version": "2.8.4",
+>>>>>>> 4d2cbb0e94dd230a7b638dedb56a3b1b45008282
       "depth": 0,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
     "com.unity.collab-proxy": {
+<<<<<<< HEAD
       "version": "1.17.2",
+=======
+      "version": "1.15.17",
+>>>>>>> 4d2cbb0e94dd230a7b638dedb56a3b1b45008282
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -25,6 +37,16 @@
       },
       "url": "https://packages.unity.com"
     },
+<<<<<<< HEAD
+=======
+    "com.unity.editorcoroutines": {
+      "version": "1.0.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+>>>>>>> 4d2cbb0e94dd230a7b638dedb56a3b1b45008282
     "com.unity.ext.nunit": {
       "version": "1.0.6",
       "depth": 1,
@@ -32,8 +54,27 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+<<<<<<< HEAD
     "com.unity.ide.rider": {
       "version": "3.0.15",
+=======
+    "com.unity.feature.development": {
+      "version": "1.0.1",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.ide.visualstudio": "2.0.15",
+        "com.unity.ide.rider": "3.0.14",
+        "com.unity.ide.vscode": "1.2.5",
+        "com.unity.editorcoroutines": "1.0.0",
+        "com.unity.performance.profile-analyzer": "1.1.1",
+        "com.unity.test-framework": "1.1.31",
+        "com.unity.testtools.codecoverage": "1.0.1"
+      }
+    },
+    "com.unity.ide.rider": {
+      "version": "3.0.14",
+>>>>>>> 4d2cbb0e94dd230a7b638dedb56a3b1b45008282
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -42,7 +83,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.visualstudio": {
+<<<<<<< HEAD
       "version": "2.0.16",
+=======
+      "version": "2.0.15",
+>>>>>>> 4d2cbb0e94dd230a7b638dedb56a3b1b45008282
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -80,6 +125,7 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+<<<<<<< HEAD
     "com.unity.probuilder": {
       "version": "5.0.6",
       "depth": 0,
@@ -89,6 +135,13 @@
         "com.unity.modules.physics": "1.0.0",
         "com.unity.modules.imgui": "1.0.0"
       },
+=======
+    "com.unity.performance.profile-analyzer": {
+      "version": "1.1.1",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+>>>>>>> 4d2cbb0e94dd230a7b638dedb56a3b1b45008282
       "url": "https://packages.unity.com"
     },
     "com.unity.render-pipelines.core": {
@@ -120,7 +173,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.services.core": {
+<<<<<<< HEAD
       "version": "1.4.2",
+=======
+      "version": "1.4.0",
+>>>>>>> 4d2cbb0e94dd230a7b638dedb56a3b1b45008282
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -132,7 +189,11 @@
     },
     "com.unity.settings-manager": {
       "version": "1.0.3",
+<<<<<<< HEAD
       "depth": 1,
+=======
+      "depth": 2,
+>>>>>>> 4d2cbb0e94dd230a7b638dedb56a3b1b45008282
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
@@ -157,6 +218,19 @@
       },
       "url": "https://packages.unity.com"
     },
+<<<<<<< HEAD
+=======
+    "com.unity.testtools.codecoverage": {
+      "version": "1.0.1",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.test-framework": "1.0.16",
+        "com.unity.settings-manager": "1.0.1"
+      },
+      "url": "https://packages.unity.com"
+    },
+>>>>>>> 4d2cbb0e94dd230a7b638dedb56a3b1b45008282
     "com.unity.textmeshpro": {
       "version": "3.0.6",
       "depth": 0,

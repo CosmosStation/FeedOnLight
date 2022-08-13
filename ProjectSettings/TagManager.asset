@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+<<<<<<< HEAD
   tags: []
+=======
+  tags:
+  - CinemachineTarget
+>>>>>>> 4d2cbb0e94dd230a7b638dedb56a3b1b45008282
   layers:
   - Default
   - TransparentFX
@@ -13,8 +18,13 @@ TagManager:
   - UI
   - 
   - 
+<<<<<<< HEAD
   - 
   - 
+=======
+  - Character
+  - Ground
+>>>>>>> 4d2cbb0e94dd230a7b638dedb56a3b1b45008282
   - 
   - 
   - 
