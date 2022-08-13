@@ -6,11 +6,11 @@ public class PlayerInteractionController : MonoBehaviour
 {
     [Header("INTERACTION PARAMETERS")]
     public LayerMask layerMaskInteract;
-    
-    private RaycastHit currentHit;
 
-    [SerializeField]
-    private float interactRange = 30f;
+    [SerializeField] private float interactRange = 30f;
+    [SerializeField] private GameObject hand;
+
+    private RaycastHit currentHit;
     private bool isReadyToInteract = false;
 
     [Header("PICKUP PARAMETERS")] 
@@ -18,8 +18,7 @@ public class PlayerInteractionController : MonoBehaviour
 
     [SerializeField] private float pickupRange = 5.0f;
     [SerializeField] private float pickupForce = 150.0f;
-    
-    
+
     private GameObject heldObj;
     private Rigidbody heldObjRB;
     
@@ -27,9 +26,8 @@ public class PlayerInteractionController : MonoBehaviour
     {
         
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    void FixedUpdate()
     {
         
     }
