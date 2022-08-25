@@ -5855,9 +5855,9 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 210.67
-  m_Range: 7.33
+  m_Color: {r: 1, g: 0.995283, b: 0.995283, a: 1}
+  m_Intensity: 100
+  m_Range: 200
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -6889,5 +6889,4 @@ MonoBehaviour:
     m_Bits: 1024
   interactRange: 10
   hand: {fileID: 679277493}
-  particleSystem: {fileID: 334913170}
   camera: {fileID: 0}
