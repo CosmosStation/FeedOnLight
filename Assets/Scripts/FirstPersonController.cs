@@ -51,6 +51,8 @@ namespace StarterAssets
 		[Tooltip("How far in degrees can you move the camera down")]
 		public float BottomClamp = -90.0f;
 
+		[Header("Interaction")] public PlayerInteractionController _interaction;
+		
 		// cinemachine
 		private float _cinemachineTargetPitch;
 
@@ -64,7 +66,7 @@ namespace StarterAssets
 		private float _jumpTimeoutDelta;
 		private float _fallTimeoutDelta;
 
-	
+
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 		private PlayerInput _playerInput;
 #endif
@@ -115,6 +117,7 @@ namespace StarterAssets
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
+			_interaction.Interact(_input);
 		}
 
 		private void LateUpdate()

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using StarterAssets;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,12 +15,8 @@ public class PlayerInteractionController : MonoBehaviour
 
     private RaycastHit currentHit;
     private bool isReadyToInteract = false;
-    
-    void Start()
-    {
-        
-    }
-    
+    private AbsorbItem _absorbItem;
+
     void FixedUpdate()
     {
         RaycastHit hit;
@@ -43,9 +40,9 @@ public class PlayerInteractionController : MonoBehaviour
         }
     }
     
-    public void Interact(InputAction.CallbackContext context)
+    public void Interact(StarterAssetsInputs inputInteract)
     {
-        if (!isReadyToInteract || context.phase != InputActionPhase.Performed) return;
+        if (!isReadyToInteract || !inputInteract.interact) return;
         Debug.Log(currentHit);
         switch (currentHit.transform.tag)
         {
@@ -53,6 +50,9 @@ public class PlayerInteractionController : MonoBehaviour
                 Debug.Log("Absorbing item");
                 GameObject gameObj = currentHit.transform.gameObject;
                 Debug.Log(gameObj);
+                _absorbItem = gameObj.GetComponent<AbsorbItem>();
+                _absorbItem.Absorb();
+                inputInteract.interact = false;
                 break;
         }
     }
