@@ -43,13 +43,13 @@ public class PlayerInteractionController : MonoBehaviour
     public void Interact(StarterAssetsInputs inputInteract)
     {
         if (!isReadyToInteract || !inputInteract.interact) return;
-        Debug.Log(currentHit);
+        // Debug.Log(currentHit);
         switch (currentHit.transform.tag)
         {
             case "AbsorbItem":
-                Debug.Log("Absorbing item");
+                // Debug.Log("Absorbing item");
                 GameObject gameObj = currentHit.transform.gameObject;
-                Debug.Log(gameObj);
+                // Debug.Log(gameObj);
                 _absorbItem = gameObj.GetComponent<AbsorbItem>();
                 _absorbItem.Absorb();
                 inputInteract.interact = false;
