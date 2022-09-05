@@ -50,8 +50,9 @@ public class PlayerInteractionController : MonoBehaviour
                 // Debug.Log("Absorbing item");
                 GameObject gameObj = currentHit.transform.gameObject;
                 // Debug.Log(gameObj);
+                Transform cameraTransform = camera.transform;
                 _absorbItem = gameObj.GetComponent<AbsorbItem>();
-                _absorbItem.Absorb();
+                _absorbItem.Absorb(cameraTransform.forward);
                 inputInteract.interact = false;
                 break;
         }

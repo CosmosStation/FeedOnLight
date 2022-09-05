@@ -1,39 +1,44 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AbsorbItem : MonoBehaviour
 {
-    public string state;
+    [SerializeField]
+    private ParticleSystem particle;
 
+    [SerializeField] 
+    private GameObject player;
+
+    private string _state;
     private List<Tween> _tweens;
-    private ParticleSystem _particle;
     
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        state = "idle";
-
+        _state = "idle";
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Absorb(Vector3 forward)
     {
-        
-    }
-
-    public void Absorb()
-    {
-        state = "absorbing";
+        _state = "absorbing";
         DOTween.Pause("pulsing");
-        // transform.localScale = new Vector3(1, 1, 1);
         DOTween.Play("absorbing");
 
-        _particle = gameObject.GetComponentInChildren<ParticleSystem>();
-        _particle.Play();
-        
-        // var emission = _particle.emission;
-        // emission.enabled = true;
+        particle.Play();
+    }
+
+    private void Update()
+    {
+        if (_state == "absorbing")
+        {
+            particle.transform.LookAt(player.transform);
+            if (particle.isStopped)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 }
