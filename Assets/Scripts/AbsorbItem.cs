@@ -12,6 +12,8 @@ public class AbsorbItem : MonoBehaviour
 
     [SerializeField] 
     private GameObject player;
+    [SerializeField] 
+    private EnergyManager playerEnergyManager;
 
     private string _state;
     private List<Tween> _tweens;
@@ -28,6 +30,7 @@ public class AbsorbItem : MonoBehaviour
         DOTween.Play("absorbing");
 
         particle.Play();
+        playerEnergyManager.increaseMode = true;
     }
 
     private void Update()
@@ -37,6 +40,7 @@ public class AbsorbItem : MonoBehaviour
             particle.transform.LookAt(player.transform);
             if (particle.isStopped)
             {
+                playerEnergyManager.increaseMode = false;        
                 Destroy(gameObject);
             }
         }

@@ -2774,9 +2774,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aedd98cdd06c504e817a84f37e08644, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  energyAmount: 100
+  increaseMode: 0
+  startEnergyAmount: 100
   decreasePoints: 1
-  timeStep: 0.5
+  increasePoints: 10
+  timeStep: 1
   lightSource: {fileID: 31979743}
   progressBarImage: {fileID: 930367983}
 --- !u!1001 &7075175405985777395
@@ -3006,6 +3008,11 @@ PrefabInstance:
       propertyPath: _particle
       value: 
       objectReference: {fileID: 125506143}
+    - target: {fileID: 7075175406876272271, guid: df3b15c52a05b4b48949fbb005e7a9a7,
+        type: 3}
+      propertyPath: playerEnergyManager
+      value: 
+      objectReference: {fileID: 5393215579111688476}
     - target: {fileID: 7075175406896114948, guid: df3b15c52a05b4b48949fbb005e7a9a7,
         type: 3}
       propertyPath: m_TagString
