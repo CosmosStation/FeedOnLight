@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using DG.Tweening.Core;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -23,11 +24,15 @@ public class AbsorbItem : MonoBehaviour
         _state = "idle";
     }
 
-    public void Absorb(Vector3 forward)
+    public void Absorb(List<Tween> tweens)
     {
         _state = "absorbing";
-        DOTween.Pause("pulsing");
-        DOTween.Play("absorbing");
+        
+        var pulsingTween = tweens.Find((tween) => tween.stringId == "pulsing");
+        pulsingTween.Pause();
+        
+        var absorbingTween = tweens.Find((tween) => tween.stringId == "absorbing");
+        absorbingTween.Play();
 
         particle.Play();
         playerEnergyManager.increaseMode = true;

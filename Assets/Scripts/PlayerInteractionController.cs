@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using StarterAssets;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -16,6 +17,7 @@ public class PlayerInteractionController : MonoBehaviour
     private RaycastHit currentHit;
     private bool isReadyToInteract = false;
     private AbsorbItem _absorbItem;
+    private List<Tween> _tweens;
 
     void FixedUpdate()
     {
@@ -48,8 +50,9 @@ public class PlayerInteractionController : MonoBehaviour
             case "AbsorbItem":
                 GameObject gameObj = currentHit.transform.gameObject;
                 Transform cameraTransform = camera.transform;
+                _tweens = DOTween.TweensByTarget(gameObj);
                 _absorbItem = gameObj.GetComponent<AbsorbItem>();
-                _absorbItem.Absorb(cameraTransform.forward);
+                _absorbItem.Absorb(_tweens);
                 inputInteract.interact = false;
                 break;
         }
