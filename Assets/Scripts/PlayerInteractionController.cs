@@ -30,14 +30,14 @@ public class PlayerInteractionController : MonoBehaviour
             Debug.DrawRay(cameraTransform.position, cameraTransform.forward * hit.distance, Color.green);
             // Debug.Log("Ray hit");
             currentHit = hit;
-            hand.transform.localEulerAngles = new Vector3(0, -13, 0);
+            hand.transform.localEulerAngles = new Vector3(-35, -39, -121);
             isReadyToInteract = true;
         }
         else
         {
             Debug.DrawRay(cameraTransform.position, cameraTransform.forward * interactRange, Color.red);
             // Debug.Log("Ray did not hit");
-            hand.transform.localEulerAngles = new Vector3(45, -13, 0);
+            hand.transform.localEulerAngles = new Vector3(0, -13, 0);
             isReadyToInteract = false;
         }
     }
