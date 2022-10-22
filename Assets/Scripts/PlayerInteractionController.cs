@@ -17,7 +17,9 @@ public class PlayerInteractionController : MonoBehaviour
     private RaycastHit currentHit;
     private bool isReadyToInteract = false;
     private AbsorbItem _absorbItem;
+    private InspectableItem _inspectableItem;
     private List<Tween> _tweens;
+
 
     void FixedUpdate()
     {
@@ -49,13 +51,19 @@ public class PlayerInteractionController : MonoBehaviour
         {
             case "AbsorbItem":
                 GameObject gameObj = currentHit.transform.gameObject;
-                Transform cameraTransform = camera.transform;
                 _tweens = DOTween.TweensByTarget(gameObj);
                 _absorbItem = gameObj.GetComponent<AbsorbItem>();
                 _absorbItem.Absorb(_tweens);
-                inputInteract.interact = false;
+                break;
+            case "InspectableItem":
+                GameObject interactObj = currentHit.transform.gameObject;
+                Debug.Log("READING NOTE");
+                _inspectableItem = interactObj.GetComponent<InspectableItem>();
+                if (_inspectableItem.isInspecting) _inspectableItem.Inspect(false); 
+                else _inspectableItem.Inspect(true);
                 break;
         }
+        inputInteract.interact = false;
     }
     
 }
