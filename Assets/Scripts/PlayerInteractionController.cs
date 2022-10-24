@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using StarterAssets;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -61,6 +62,12 @@ public class PlayerInteractionController : MonoBehaviour
                 _inspectableItem = interactObj.GetComponent<InspectableItem>();
                 if (_inspectableItem.isInspecting) _inspectableItem.Inspect(false); 
                 else _inspectableItem.Inspect(true);
+                break;
+            case "Door":
+                GameObject doorObj = currentHit.transform.gameObject;
+                Debug.Log("OpenDoor");
+                DoorUlitmate door = doorObj.GetComponent<DoorUlitmate>();
+                door.UseDoor();
                 break;
         }
         inputInteract.interact = false;
