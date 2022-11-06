@@ -72,7 +72,6 @@ public class EnergyManager : MonoBehaviour
             _energyAmount = startEnergyAmount;
             lightSource.intensity = _energyAmount;
             progressBarImage.rectTransform.sizeDelta = new Vector2(500, 15);
-            Debug.Log("Healed fully");
         }
     }
 }
