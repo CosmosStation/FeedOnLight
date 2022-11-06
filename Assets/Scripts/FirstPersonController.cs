@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using FMODUnity;
+using UnityEngine;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
 #endif
@@ -53,6 +54,9 @@ namespace StarterAssets
 
 		[Header("Interaction")] public PlayerInteractionController _interaction;
 		
+		// FMOD
+		[Header("Interaction")] [SerializeField] private StudioEventEmitter _footStepsSource;
+		
 		// cinemachine
 		private float _cinemachineTargetPitch;
 
@@ -65,6 +69,7 @@ namespace StarterAssets
 		// timeout deltatime
 		private float _jumpTimeoutDelta;
 		private float _fallTimeoutDelta;
+		
 
 
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
@@ -110,6 +115,8 @@ namespace StarterAssets
 			// reset our timeouts on start
 			_jumpTimeoutDelta = JumpTimeout;
 			_fallTimeoutDelta = FallTimeout;
+			
+			InvokeRepeating("FootStepsSoundEmit", 0, 0.5f);
 		}
 
 		private void Update()
@@ -201,6 +208,15 @@ namespace StarterAssets
 			_controller.Move(inputDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
 		}
 
+		private void FootStepsSoundEmit()
+		{
+			if (_input.move != Vector2.zero)
+			{
+				_footStepsSource.Play();
+			}
+		}
+
+		// ReSharper disable Unity.PerformanceAnalysis
 		private void JumpAndGravity()
 		{
 			if (Grounded)
