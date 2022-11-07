@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class EnergyManager : MonoBehaviour
@@ -23,6 +24,8 @@ public class EnergyManager : MonoBehaviour
     {
         _energyAmount = startEnergyAmount;
         DOTween.defaultEaseType = Ease.Linear;
+        Debug.Log(Color.white);
+        Debug.Log(Color.black);
     }
 
     private void Update()
@@ -48,12 +51,14 @@ public class EnergyManager : MonoBehaviour
         if (_energyAmount > 0)
         {
             lightSource.DOIntensity(_energyAmount, timeStep);
+            lightSource.DOColor(new Color(_energyAmount / 100, _energyAmount / 100, _energyAmount / 100, _energyAmount / 100), timeStep);
             progressBarImage.rectTransform.DOSizeDelta(new Vector2(500 * _energyAmount / 100, 15), timeStep);
         }
         else
         {
             progressBarImage.rectTransform.sizeDelta = new Vector2(0, 15);
             Debug.Log("Dead");
+            SceneManager.LoadScene("StartMenu");
             this.enabled = false;
         }
     }
