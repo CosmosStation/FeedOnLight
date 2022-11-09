@@ -538,9 +538,9 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0.995283, b: 0.995283, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 100
-  m_Range: 200
+  m_Range: 20
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -609,6 +609,68 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!1 &1333838732
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1333838733}
+  - component: {fileID: 1333838734}
+  m_Layer: 0
+  m_Name: FootSteps Audio Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1333838733
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333838732}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8997996947095583982}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1333838734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333838732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -763309474
+      Data2: 1261517448
+      Data3: -1819167357
+      Data4: -247717014
+    Path: event:/Footsteps
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1350565501
 GameObject:
   m_ObjectHideFlags: 0
@@ -1843,7 +1905,7 @@ SkinnedMeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1222174165508354402}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -1855,7 +1917,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -280023814333034059, guid: d7c7bc608b682d4458a1b4c4d9638d80, type: 3}
+  - {fileID: 2100000, guid: c801d647a2138b14a97515b0809595a2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3342,8 +3404,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7269111866030459939}
-  m_LocalRotation: {x: 0.21314785, y: -0.21779385, z: -0.8969382, w: 0.32036796}
-  m_LocalPosition: {x: 0.37, y: -0.133, z: 0.066}
+  m_LocalRotation: {x: 0.13750279, y: -0.40347567, z: -0.83188957, w: 0.3553311}
+  m_LocalPosition: {x: 0.273, y: -0.205, z: 0.103}
   m_LocalScale: {x: 0.06, y: 0.06, z: 0.06}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -3352,7 +3414,7 @@ Transform:
   - {fileID: 2807213309064229195}
   m_Father: {fileID: 4135013735270702856}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -14.722, y: -32.658, z: -136.354}
+  m_LocalEulerAnglesHint: {x: -35, y: -39, z: -121}
 --- !u!1 &7321605065880728540
 GameObject:
   m_ObjectHideFlags: 0
@@ -3717,6 +3779,7 @@ GameObject:
   - component: {fileID: 8616685848737228376}
   - component: {fileID: 135756641613574980}
   - component: {fileID: 5393215579111688476}
+  - component: {fileID: 958580988}
   m_Layer: 0
   m_Name: PlayerCapsule
   m_TagString: Player
@@ -3740,6 +3803,7 @@ Transform:
   - {fileID: 5393215578589016641}
   - {fileID: 1214601246}
   - {fileID: 154702020}
+  - {fileID: 1333838733}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3781,16 +3845,17 @@ MonoBehaviour:
   Gravity: -15
   JumpTimeout: 0.1
   FallTimeout: 0.15
-  Grounded: 1
+  Grounded: 0
   GroundedOffset: -0.14
   GroundedRadius: 0.5
   GroundLayers:
     serializedVersion: 2
-    m_Bits: 513
+    m_Bits: 512
   CinemachineCameraTarget: {fileID: 4135013735270702863}
   TopClamp: 89
   BottomClamp: -89
   _interaction: {fileID: 135756641613574980}
+  _footStepsSource: {fileID: 1333838734}
 --- !u!114 &1978471637655604388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3943,7 +4008,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   interactRange: 4
-  hand: {fileID: 679277493}
+  hand: {fileID: 7269111866030459939}
   camera: {fileID: 0}
 --- !u!114 &5393215579111688476
 MonoBehaviour:
@@ -3964,6 +4029,36 @@ MonoBehaviour:
   timeStep: 1
   lightSource: {fileID: 1214601248}
   progressBarImage: {fileID: 0}
+--- !u!114 &958580988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8616685848737228372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1954155989
+      Data2: 1091642604
+      Data3: -1313780333
+      Data4: 172495547
+    Path: event:/Start
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &9090776520287054503
 GameObject:
   m_ObjectHideFlags: 0
