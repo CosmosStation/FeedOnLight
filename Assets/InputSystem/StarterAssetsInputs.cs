@@ -23,6 +23,8 @@ namespace StarterAssets
 		public bool action = false;
 		public bool altAction = false;
 
+		[Header("Interaction")] public PlayerInteractionController Interaction;
+		
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 		public void OnMove(InputValue value)
 		{
@@ -82,7 +84,9 @@ namespace StarterAssets
 		public void InteractInput(bool newInteractState)
 		{
 			Debug.Log("InteractInput");
+			Debug.Log(newInteractState);
 			interact = newInteractState;
+			Interaction.Interact(interact);
 		}
 		
 		public void ActionInput(bool newActionState)

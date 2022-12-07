@@ -125,7 +125,6 @@ namespace StarterAssets
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
-			_interaction.Interact(_input);
 		}
 
 		private void LateUpdate()

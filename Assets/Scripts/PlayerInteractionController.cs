@@ -106,56 +106,62 @@ public class PlayerInteractionController : MonoBehaviour
     {
         
     }
-    
-    public void Interact(StarterAssetsInputs inputInteract)
+
+    public void Interact(bool inputInteract)
     {
-        if (!isReadyToInteract || !inputInteract.interact) return;
-        if (isObjectHeld)
+        if ((!objectHeld && !isReadyToInteract)) return;
+        Debug.Log("inputInteract");
+        Debug.Log(inputInteract);
+        if (!inputInteract && isObjectHeld)
         {
             isObjectHeld = false;
-            inputInteract.interact = false;
             objectHeld.GetComponent<Rigidbody>().useGravity = true;
             objectHeld.GetComponent<Rigidbody>().freezeRotation = false;
             objectHeld = null;
             return;
-        }
-        switch (currentHit.transform.tag)
+        } else if (isReadyToInteract && inputInteract)
         {
-            case "AbsorbItem":
-                objectHeld = currentHit.transform.gameObject;
-                _tweens = DOTween.TweensByTarget(objectHeld);
-                _absorbItem = objectHeld.GetComponent<AbsorbItem>();
-                _absorbItem.Absorb(_tweens);
-                break;
-            case "InspectableItem":
-                isObjectHeld = true;
-                objectHeld = currentHit.transform.gameObject;
-                Debug.Log("READING NOTE");
-                _inspectableItem = objectHeld.GetComponent<InspectableItem>();
-                if (_inspectableItem.isInspecting) _inspectableItem.Inspect(false); 
-                else _inspectableItem.Inspect(true);
-                break;
-            case "Door":
-                objectHeld = currentHit.transform.gameObject;
-                isObjectHeld = true;
-                Debug.Log("OpenDoor");
-                // DoorUlitmate door = doorObj.GetComponent<DoorUlitmate>();
-                // door.UseDoor();
-                objectHeld.GetComponent<Rigidbody>().useGravity = true;
-                objectHeld.GetComponent<Rigidbody>().freezeRotation = false;
-                break;
-            case "Interact":
-                
-                break;
-            case "InteractItem":
-                objectHeld = currentHit.transform.gameObject;
-                isObjectHeld = true;
-                Debug.Log("OpenDoor");
-                objectHeld.GetComponent<Rigidbody>().useGravity = true;
-                objectHeld.GetComponent<Rigidbody>().freezeRotation = true;
-                break;
+            switch (currentHit.transform.tag)
+            {
+                case "AbsorbItem":
+                    objectHeld = currentHit.transform.gameObject;
+                    _tweens = DOTween.TweensByTarget(objectHeld);
+                    _absorbItem = objectHeld.GetComponent<AbsorbItem>();
+                    _absorbItem.Absorb(_tweens);
+                    break;
+                case "InspectableItem":
+                    isObjectHeld = true;
+                    objectHeld = currentHit.transform.gameObject;
+                    Debug.Log("READING NOTE");
+                    _inspectableItem = objectHeld.GetComponent<InspectableItem>();
+                    if (_inspectableItem.isInspecting) _inspectableItem.Inspect(false);
+                    else _inspectableItem.Inspect(true);
+                    break;
+                case "Door":
+                    objectHeld = currentHit.transform.gameObject;
+                    isObjectHeld = true;
+                    Debug.Log("OpenDoor");
+                    // DoorUlitmate door = doorObj.GetComponent<DoorUlitmate>();
+                    // door.UseDoor();
+                    objectHeld.GetComponent<Rigidbody>().useGravity = true;
+                    objectHeld.GetComponent<Rigidbody>().freezeRotation = false;
+                    break;
+                case "Interact":
+                    objectHeld = currentHit.transform.gameObject;
+                    isObjectHeld = true;
+                    Debug.Log("Interact");
+                    objectHeld.GetComponent<Rigidbody>().useGravity = true;
+                    objectHeld.GetComponent<Rigidbody>().freezeRotation = true;
+                    break;
+                case "InteractItem":
+                    objectHeld = currentHit.transform.gameObject;
+                    isObjectHeld = true;
+                    Debug.Log("InteractItem");
+                    objectHeld.GetComponent<Rigidbody>().useGravity = true;
+                    objectHeld.GetComponent<Rigidbody>().freezeRotation = true;
+                    break;
+            }
         }
-        inputInteract.interact = false;
     }
     
     private void HoldObject(){
