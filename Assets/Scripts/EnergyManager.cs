@@ -28,22 +28,22 @@ public class EnergyManager : MonoBehaviour
         Debug.Log(Color.black);
     }
 
-    private void Update()
-    {
-        _time += Time.deltaTime;
-        if (_time >= timeStep)
-        {
-            _time = 0;
-            if (increaseMode)
-            {
-                this.IncreaseEnergy(increasePoints);
-            }
-            else
-            {
-                this.DecreaseEnergy(decreasePoints);
-            }
-        }
-    }
+    // private void Update()
+    // {
+    //     _time += Time.deltaTime;
+    //     if (_time >= timeStep)
+    //     {
+    //         _time = 0;
+    //         if (increaseMode)
+    //         {
+    //             this.IncreaseEnergy(increasePoints);
+    //         }
+    //         else
+    //         {
+    //             this.DecreaseEnergy(decreasePoints);
+    //         }
+    //     }
+    // }
 
     public void DecreaseEnergy(float amount)
     {

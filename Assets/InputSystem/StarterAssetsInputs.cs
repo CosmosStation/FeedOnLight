@@ -10,9 +10,9 @@ namespace StarterAssets
 		[Header("Character Input Values")]
 		public Vector2 move;
 		public Vector2 look;
-		public bool jump;
-		public bool sprint;
-		public bool interact;
+		public bool jump = false;
+		public bool sprint = false;
+		public bool interact = false;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -20,8 +20,8 @@ namespace StarterAssets
 		[Header("Mouse Cursor Settings")]
 		public bool cursorLocked = true;
 		public bool cursorInputForLook = true;
-		public bool action;
-		public bool altAction;
+		public bool action = false;
+		public bool altAction = false;
 
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 		public void OnMove(InputValue value)
@@ -81,6 +81,7 @@ namespace StarterAssets
 		
 		public void InteractInput(bool newInteractState)
 		{
+			Debug.Log("InteractInput");
 			interact = newInteractState;
 		}
 		

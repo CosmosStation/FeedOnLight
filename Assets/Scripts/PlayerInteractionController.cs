@@ -49,8 +49,7 @@ public class PlayerInteractionController : MonoBehaviour
     public TagsClass Tags = new TagsClass();
 
     [SerializeField] private float interactRange = 30f;
-    [SerializeField] private float PickupRange = 3f;
-    [SerializeField] private float ThrowStrength = 50f;
+    //[SerializeField] private float ThrowStrength = 50f;
     [SerializeField] private float distance = 3f;
     [SerializeField] private float maxDistanceGrab = 4f;
     [SerializeField] private GameObject hand;
@@ -111,6 +110,15 @@ public class PlayerInteractionController : MonoBehaviour
     public void Interact(StarterAssetsInputs inputInteract)
     {
         if (!isReadyToInteract || !inputInteract.interact) return;
+        if (isObjectHeld)
+        {
+            isObjectHeld = false;
+            inputInteract.interact = false;
+            objectHeld.GetComponent<Rigidbody>().useGravity = true;
+            objectHeld.GetComponent<Rigidbody>().freezeRotation = false;
+            objectHeld = null;
+            return;
+        }
         switch (currentHit.transform.tag)
         {
             case "AbsorbItem":
@@ -135,7 +143,16 @@ public class PlayerInteractionController : MonoBehaviour
                 // door.UseDoor();
                 objectHeld.GetComponent<Rigidbody>().useGravity = true;
                 objectHeld.GetComponent<Rigidbody>().freezeRotation = false;
+                break;
+            case "Interact":
                 
+                break;
+            case "InteractItem":
+                objectHeld = currentHit.transform.gameObject;
+                isObjectHeld = true;
+                Debug.Log("OpenDoor");
+                objectHeld.GetComponent<Rigidbody>().useGravity = true;
+                objectHeld.GetComponent<Rigidbody>().freezeRotation = true;
                 break;
         }
         inputInteract.interact = false;
