@@ -52,13 +52,14 @@ namespace StarterAssets
 		[Tooltip("How far in degrees can you move the camera down")]
 		public float BottomClamp = -90.0f;
 
-		[Header("Interaction")] public PlayerInteractionController _interaction;
-		
 		// FMOD
-		[Header("Interaction")] [SerializeField] private StudioEventEmitter _footStepsSource;
+		[Header("Sound")] [SerializeField] private StudioEventEmitter _footStepsSource;
+
+		[Header("Interaction")] public PlayerInteractionController _interaction;
 		
 		// cinemachine
 		private float _cinemachineTargetPitch;
+		private bool _IsCameraLocked = false;
 
 		// player
 		private float _speed;
@@ -142,7 +143,7 @@ namespace StarterAssets
 		private void CameraRotation()
 		{
 			// if there is an input
-			if (_input.look.sqrMagnitude >= _threshold)
+			if (_input.look.sqrMagnitude >= _threshold && _IsCameraLocked == false)
 			{
 				//Don't multiply mouse input by Time.deltaTime
 				float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
@@ -159,6 +160,21 @@ namespace StarterAssets
 				// rotate the player left and right
 				transform.Rotate(Vector3.up * _rotationVelocity);
 			}
+		}
+
+		private void LockCamera()
+		{
+			_IsCameraLocked = true;
+		}
+
+		private void UnlockCamera()
+		{
+			_IsCameraLocked = false;
+		}
+
+		public void FocusOnTarget()
+		{
+			
 		}
 
 		private void Move()

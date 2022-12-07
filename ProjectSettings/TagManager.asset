@@ -8,6 +8,8 @@ TagManager:
   - AbsorbItem
   - InspectableItem
   - Door
+  - InteractItem
+  - Interact
   layers:
   - Default
   - TransparentFX

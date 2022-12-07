@@ -20,6 +20,8 @@ namespace StarterAssets
 		[Header("Mouse Cursor Settings")]
 		public bool cursorLocked = true;
 		public bool cursorInputForLook = true;
+		public bool action;
+		public bool altAction;
 
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 		public void OnMove(InputValue value)
@@ -49,6 +51,16 @@ namespace StarterAssets
 		{
 			InteractInput(value.isPressed);
 		}
+		
+		public void OnAction(InputValue value)
+		{
+			ActionInput(value.isPressed);
+		}
+		
+		public void OnAltAction(InputValue value)
+		{
+			AltActionInput(value.isPressed);
+		}
 #endif
 
 
@@ -66,9 +78,20 @@ namespace StarterAssets
 		{
 			jump = newJumpState;
 		}
+		
 		public void InteractInput(bool newInteractState)
 		{
 			interact = newInteractState;
+		}
+		
+		public void ActionInput(bool newActionState)
+		{
+			interact = newActionState;
+		}
+		
+		public void AltActionInput(bool newAltActionState)
+		{
+			interact = newAltActionState;
 		}
 		
 
