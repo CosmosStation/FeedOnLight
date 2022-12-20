@@ -1,8 +1,11 @@
 ﻿using FSM;
+using PatrolEnemy;
+using UnityEngine;
 using UnityEngine.AI;
 
-namespace AIFSM
+namespace PatrolFSM
 {
+    [CreateAssetMenu(menuName = "FSM/Actions/Patrol")]
     public class PatrolAction: FSMAction
     {
         public override void Execute(BaseStateMachine stateMachine)
@@ -10,7 +13,7 @@ namespace AIFSM
             var navMeshAgent = stateMachine.GetComponent<NavMeshAgent>();
             var patrolPoints = stateMachine.GetComponent<PatrolPoints>();
 
-            if (patrolPoints.HasReached(patrolPoints))
+            if (patrolPoints.HasReached(navMeshAgent))
                 navMeshAgent.SetDestination(patrolPoints.GetNext().position);
         }
     }
