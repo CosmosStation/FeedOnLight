@@ -16,8 +16,8 @@ GameObject:
   m_Name: Particle Collector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &154702020
 Transform:
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 154702019}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.01, y: 1.134, z: 1.675}
+  m_LocalPosition: {x: -0.01, y: 2.121, z: 1.675}
   m_LocalScale: {x: 0.40920398, y: 0.40920398, z: 0.40920398}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -113,8 +113,8 @@ GameObject:
   m_Name: hand (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &219671835
 Transform:
@@ -343,8 +343,8 @@ GameObject:
   m_Name: hand (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &771416466
 Transform:
@@ -426,8 +426,8 @@ GameObject:
   m_Name: hand (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &883612060
 Transform:
@@ -520,7 +520,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1214601245}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.556, z: 0.586}
+  m_LocalPosition: {x: 0, y: 2.126, z: 0.586}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -686,8 +686,8 @@ GameObject:
   m_Name: hand (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1350565502
 Transform:
@@ -769,8 +769,8 @@ GameObject:
   m_Name: hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1653113068
 Transform:
@@ -852,8 +852,8 @@ GameObject:
   m_Name: hand (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1689125982
 Transform:
@@ -1462,8 +1462,8 @@ GameObject:
   m_Name: hand (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &2042059110
 Transform:
@@ -1545,8 +1545,8 @@ GameObject:
   m_Name: hand (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &2140175809
 Transform:
@@ -2760,7 +2760,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4135013735270702863}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.375, z: 0.532}
+  m_LocalPosition: {x: 0, y: 1.527, z: 0.081}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3070,13 +3070,12 @@ GameObject:
   - component: {fileID: 5393215578589016641}
   - component: {fileID: 5393215578589016654}
   - component: {fileID: 5393215578589016655}
-  - component: {fileID: 5393215578589016640}
   m_Layer: 8
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &5393215578589016641
 Transform:
@@ -3086,8 +3085,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5393215578589016642}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.9, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.9, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8997996947095583982}
@@ -3108,7 +3107,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5393215578589016642}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -3143,20 +3142,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &5393215578589016640
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5393215578589016642}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5841851174763801683
 GameObject:
   m_ObjectHideFlags: 0
@@ -3778,9 +3763,9 @@ GameObject:
   - component: {fileID: 5420857361349278248}
   - component: {fileID: 8616685848737228376}
   - component: {fileID: 135756641613574980}
-  - component: {fileID: 5393215579111688476}
   - component: {fileID: 958580988}
-  m_Layer: 0
+  - component: {fileID: 958580989}
+  m_Layer: 8
   m_Name: PlayerCapsule
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -3819,7 +3804,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 2
-  m_Radius: 0.5
+  m_Radius: 0.4
   m_SlopeLimit: 45
   m_StepOffset: 0.25
   m_SkinWidth: 0.02
@@ -3854,8 +3839,8 @@ MonoBehaviour:
   CinemachineCameraTarget: {fileID: 4135013735270702863}
   TopClamp: 89
   BottomClamp: -89
-  _interaction: {fileID: 135756641613574980}
   _footStepsSource: {fileID: 1333838734}
+  _interaction: {fileID: 135756641613574980}
 --- !u!114 &1978471637655604388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3870,7 +3855,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pushLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   canPush: 0
   strength: 1.1
 --- !u!114 &5420857361349278248
@@ -3893,6 +3878,9 @@ MonoBehaviour:
   analogMovement: 0
   cursorLocked: 1
   cursorInputForLook: 1
+  action: 0
+  altAction: 0
+  Interaction: {fileID: 135756641613574980}
 --- !u!114 &8616685848737228376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4007,28 +3995,32 @@ MonoBehaviour:
   layerMaskInteract:
     serializedVersion: 2
     m_Bits: 1024
+  ObjectGrab:
+    m_FreezeRotation: 0
+    m_PickupRange: 3
+    m_ThrowStrength: 50
+    m_distance: 3
+    m_maxDistanceGrab: 4
+  ItemGrab:
+    m_FreezeRotation: 0
+    m_ItemPickupRange: 2
+    m_ItemThrow: 45
+    m_ItemDistance: 1
+    m_ItemMaxGrab: 2.5
+  DoorGrab:
+    m_DoorPickupRange: 2
+    m_DoorThrow: 10
+    m_DoorDistance: 2
+    m_DoorMaxGrab: 3
+  Tags:
+    m_InteractTag: Interact
+    m_InteractItemsTag: InteractItem
+    m_DoorsTag: Door
   interactRange: 4
+  distance: 3
+  maxDistanceGrab: 4
   hand: {fileID: 7269111866030459939}
-  camera: {fileID: 0}
---- !u!114 &5393215579111688476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8616685848737228372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1aedd98cdd06c504e817a84f37e08644, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  increaseMode: 0
-  startEnergyAmount: 100
-  decreasePoints: 1
-  increasePoints: 10
-  timeStep: 1
-  lightSource: {fileID: 1214601248}
-  progressBarImage: {fileID: 0}
+  playerCamera: {fileID: 0}
 --- !u!114 &958580988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4059,6 +4051,20 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!136 &958580989
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8616685848737228372}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.4
+  m_Height: 1.9
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!1 &9090776520287054503
 GameObject:
   m_ObjectHideFlags: 0
