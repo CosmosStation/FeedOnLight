@@ -13,6 +13,7 @@ namespace StarterAssets
 		public bool jump = false;
 		public bool sprint = false;
 		public bool interact = false;
+		public bool crouch = false;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -47,6 +48,11 @@ namespace StarterAssets
 		public void OnSprint(InputValue value)
 		{
 			SprintInput(value.isPressed);
+		}
+
+		public void OnCrouch(InputValue value)
+		{
+			CrouchInput(value.isPressed);
 		}
 		
 		public void OnInteract(InputValue value)
@@ -103,6 +109,11 @@ namespace StarterAssets
 		public void SprintInput(bool newSprintState)
 		{
 			sprint = newSprintState;
+		}
+
+		public void CrouchInput(bool newCrouchState)
+		{
+			crouch = newCrouchState;
 		}
 		
 		private void OnApplicationFocus(bool hasFocus)
