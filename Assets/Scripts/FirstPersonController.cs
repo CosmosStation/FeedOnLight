@@ -202,8 +202,8 @@ namespace StarterAssets
 				Collider[] hits = Physics.OverlapCapsule(capsulePosition, targetCapsulePosition, _controller.radius);
 
 				// Предвещаю баги из-за такого решения
-				// Одна коллизия - пол, другая - PlayerCapsule 
-				if (hits.Length <= 2) {
+				// Одна коллизия - пол, другая - PlayerCapsule, третья - второй коллайдер
+				if (hits.Length <= 3) {
 					Vector3 CamPosition  = CinemachineCameraTarget.transform.position;
 					_controller.height = _colliderStandHeight;
 					CinemachineCameraTarget.transform.position = new Vector3(CamPosition.x, _cinemachineStandPosition.y, CamPosition.z);
