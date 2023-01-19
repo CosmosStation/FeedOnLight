@@ -61,6 +61,9 @@ namespace StarterAssets
 
 		[Header("Interaction")] public PlayerInteractionController _interaction;
 		
+		// Hidden from monster
+		public bool hidden = false;
+		
 		// cinemachine
 		private float _cinemachineTargetPitch;
 		private bool _IsCameraLocked = false;
@@ -133,6 +136,7 @@ namespace StarterAssets
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
+			Debug.Log(hidden);
 		}
 
 		private void LateUpdate()
