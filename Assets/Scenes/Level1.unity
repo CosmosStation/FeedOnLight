@@ -9342,6 +9342,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1286836690}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &958580988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958580978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4be82e18e5f1afc4fa84d46861c3349a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _light: {fileID: 1504249113}
 --- !u!1001 &995427495
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12802,6 +12815,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1214601248, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: m_Intensity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 135756641613574980, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
       propertyPath: m_Enabled
@@ -12822,6 +12839,21 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5420857361349278248, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: Light
+      value: 
+      objectReference: {fileID: 958580988}
+    - target: {fileID: 5420857361349278248, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: light
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8616685848737228371, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: _light
+      value: 
+      objectReference: {fileID: 1504249113}
     - target: {fileID: 8616685848737228371, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
       propertyPath: MoveSpeed
@@ -13457,7 +13489,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1365327807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15174,6 +15206,12 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7230632099820666459, guid: b00b8d607deb0bb44bcc80ae1d27f553, type: 3}
+--- !u!108 &1504249113 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 1214601248, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+    type: 3}
+  m_PrefabInstance: {fileID: 1286836690}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1513996279
 PrefabInstance:
   m_ObjectHideFlags: 0
