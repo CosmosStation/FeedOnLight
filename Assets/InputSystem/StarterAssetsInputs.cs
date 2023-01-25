@@ -97,8 +97,6 @@ namespace StarterAssets
 		
 		public void InteractInput(bool newInteractState)
 		{
-			Debug.Log("InteractInput");
-			Debug.Log(newInteractState);
 			interact = newInteractState;
 			Interaction.Interact(interact);
 		}
