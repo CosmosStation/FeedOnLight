@@ -17,7 +17,7 @@ namespace FSM
 
         public BaseState CurrentState { get; set; }
 
-        private void Update()
+        private void FixedUpdate()
         {
             CurrentState.Execute(this);
         }
