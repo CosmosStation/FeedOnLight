@@ -10,6 +10,7 @@ TagManager:
   - Door
   - InteractItem
   - Interact
+  - ChangeColorItem
   layers:
   - Default
   - TransparentFX
