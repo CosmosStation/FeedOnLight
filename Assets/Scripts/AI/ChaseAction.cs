@@ -6,7 +6,7 @@ using UnityEngine.AI;
 namespace PatrolFSM
 {
     [CreateAssetMenu(menuName = "FSM/Actions/Chase")]
-    public class ChaseAcion : FSMAction
+    public class ChaseAction : FSMAction
     {
         public override void Execute(BaseStateMachine stateMachine)
         {
