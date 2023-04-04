@@ -58,7 +58,6 @@ public class PlayerInteractionController : MonoBehaviour
     private RaycastHit currentHit;
     private bool isReadyToInteract = false;
     private AbsorbItem _absorbItem;
-    private ChangeColorItem _changeColorItem;
     private InspectableItem _inspectableItem;
     private List<Tween> _tweens;
     private GameObject objectHeld;
@@ -111,6 +110,8 @@ public class PlayerInteractionController : MonoBehaviour
     public void Interact(bool inputInteract)
     {
         if ((!objectHeld && !isReadyToInteract)) return;
+        Debug.Log("inputInteract");
+        Debug.Log(inputInteract);
         if (!inputInteract && isObjectHeld)
         {
             isObjectHeld = false;
@@ -122,11 +123,6 @@ public class PlayerInteractionController : MonoBehaviour
         {
             switch (currentHit.transform.tag)
             {
-                case "ChangeColorItem":
-                    objectHeld = currentHit.transform.gameObject;
-                    _changeColorItem = objectHeld.GetComponent<ChangeColorItem>();
-                    _changeColorItem.ChangeColor();
-                    break;
                 case "AbsorbItem":
                     objectHeld = currentHit.transform.gameObject;
                     _tweens = DOTween.TweensByTarget(objectHeld);

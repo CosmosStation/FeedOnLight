@@ -13,8 +13,6 @@ namespace StarterAssets
 		public bool jump = false;
 		public bool sprint = false;
 		public bool interact = false;
-		public bool crouch = false;
-		public bool light = false;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -26,8 +24,6 @@ namespace StarterAssets
 		public bool altAction = false;
 
 		[Header("Interaction")] public PlayerInteractionController Interaction;
-
-		[Header("Light")] public LightController Light;
 		
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 		public void OnMove(InputValue value)
@@ -51,16 +47,6 @@ namespace StarterAssets
 		public void OnSprint(InputValue value)
 		{
 			SprintInput(value.isPressed);
-		}
-
-		public void OnCrouch(InputValue value)
-		{
-			CrouchInput(value.isPressed);
-		}
-
-		public void OnLight(InputValue value)
-		{
-			LightInput(value.isPressed);
 		}
 		
 		public void OnInteract(InputValue value)
@@ -97,6 +83,8 @@ namespace StarterAssets
 		
 		public void InteractInput(bool newInteractState)
 		{
+			Debug.Log("InteractInput");
+			Debug.Log(newInteractState);
 			interact = newInteractState;
 			Interaction.Interact(interact);
 		}
@@ -115,17 +103,6 @@ namespace StarterAssets
 		public void SprintInput(bool newSprintState)
 		{
 			sprint = newSprintState;
-		}
-
-		public void CrouchInput(bool newCrouchState)
-		{
-			crouch = newCrouchState;
-		}
-
-		public void LightInput(bool newLightState)
-		{
-			light = newLightState;
-			Light.Turn();
 		}
 		
 		private void OnApplicationFocus(bool hasFocus)
