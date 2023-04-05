@@ -13,11 +13,6 @@ namespace PatrolFSM
             var navMeshAgent = stateMachine.GetComponent<NavMeshAgent>();
             var patrolPoints = stateMachine.GetComponent<PatrolPoints>();
 
-            var spider = stateMachine.GetComponent<Spider>();
-
-            spider.walk(patrolPoints.GetNext().position);
-            spider.turn(patrolPoints.GetNext().position);
-
             if (patrolPoints.HasReached(navMeshAgent))
                 navMeshAgent.SetDestination(patrolPoints.GetNext().position);
         }
