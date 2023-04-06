@@ -30,7 +30,7 @@ public class MonsterWalk : MonoBehaviour
     private IEnumerator TakeStep(int legIndex)
     {
         Vector3 startPosition = ikTargets[legIndex].position;
-        Vector3 targetPosition = transform.position + walkingDirection * stepDistance;
+        Vector3 targetPosition = transform.position + walkingDirection * stepDistance + ikTargets[legIndex].localPosition;
         float startTime = Time.time;
 
         while (Time.time < startTime + stepDuration)
