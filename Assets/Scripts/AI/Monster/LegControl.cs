@@ -6,7 +6,9 @@ public class LegControl : MonoBehaviour
 {
     public FABRIK[] fabrikComponents;
     public Transform[] ikTargets;
+    public Transform[] ikControls;
     public float stepDistance = 1f;
+    public float stepRange = 0.25f;
     public float stepHeight = 0.5f;
     public float stepDuration = 0.5f;
     public Vector3 walkingDirection = Vector3.forward;
@@ -17,31 +19,29 @@ public class LegControl : MonoBehaviour
     
     void Update()
     {
-        if (Vector3.Distance(ikTargets[currentLeg].position, transform.position + walkingDirection * stepDistance) > stepDistance)
+        float distance = Random.Range(stepDistance - stepRange, stepDuration + stepRange);
+        if (Vector3.Distance(ikControls[currentLeg].position, ikTargets[currentLeg].position) > distance)
         {
             StartCoroutine(TakeStep(currentLeg));
-            currentLeg = (currentLeg + 1) % ikTargets.Length;
+            currentLeg = (currentLeg + 1) % ikControls.Length;
         }
-        
-        float speed = walkingDirection.magnitude * animationSpeedMultiplier;
-        animator.SetFloat("speed", speed);
     } 
     
     private IEnumerator TakeStep(int legIndex)
     {
-        Vector3 startPosition = ikTargets[legIndex].position;
-        Vector3 targetPosition = transform.position + walkingDirection * stepDistance;
+        Vector3 startPosition = ikControls[legIndex].position;
+        Vector3 targetPosition = ikTargets[currentLeg].position;
         float startTime = Time.time;
-
+    
         while (Time.time < startTime + stepDuration)
         {
             float progress = (Time.time - startTime) / stepDuration;
             float yOffset = Mathf.Sin(progress * Mathf.PI) * stepHeight;
-            ikTargets[legIndex].position = Vector3.Lerp(startPosition, targetPosition, progress) + Vector3.up * yOffset;
+            ikControls[legIndex].position = Vector3.Lerp(startPosition, targetPosition, progress) + Vector3.up * yOffset;
             yield return null;
         }
-
-        ikTargets[legIndex].position = targetPosition;
+    
+        ikControls[legIndex].position = targetPosition;
     }
     
 }
