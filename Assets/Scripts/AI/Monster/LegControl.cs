@@ -7,6 +7,8 @@ public class LegControl : MonoBehaviour
     public FABRIK[] fabrikComponents;
     public Transform[] ikTargets;
     public Transform[] ikControls;
+    public float[] stepDistanceForLeg;
+    public bool[] isLegMoving;
     public float stepDistance = 1f;
     public float stepRange = 0.25f;
     public float stepHeight = 0.5f;
@@ -19,12 +21,13 @@ public class LegControl : MonoBehaviour
     
     void Update()
     {
-        float distance = Random.Range(stepDistance - stepRange, stepDuration + stepRange);
-        if (Vector3.Distance(ikControls[currentLeg].position, ikTargets[currentLeg].position) > distance)
+        float distance = Random.Range(stepDistanceForLeg[currentLeg] - stepRange, stepDistanceForLeg[currentLeg] + stepRange);
+        if ((Vector3.Distance(ikControls[currentLeg].position, ikTargets[currentLeg].position) > distance) && !isLegMoving[currentLeg])
         {
+            isLegMoving[currentLeg] = true;
             StartCoroutine(TakeStep(currentLeg));
-            currentLeg = (currentLeg + 1) % ikControls.Length;
         }
+        currentLeg = (currentLeg + 1) % ikControls.Length;
     } 
     
     private IEnumerator TakeStep(int legIndex)
@@ -40,7 +43,8 @@ public class LegControl : MonoBehaviour
             ikControls[legIndex].position = Vector3.Lerp(startPosition, targetPosition, progress) + Vector3.up * yOffset;
             yield return null;
         }
-    
+        
+        isLegMoving[currentLeg] = false;
         ikControls[legIndex].position = targetPosition;
     }
     
