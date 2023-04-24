@@ -26,8 +26,8 @@ public class LegControl : MonoBehaviour
         {
             isLegMoving[currentLeg] = true;
             StartCoroutine(TakeStep(currentLeg));
+            currentLeg = (currentLeg + 1) % ikControls.Length;
         }
-        currentLeg = (currentLeg + 1) % ikControls.Length;
     } 
     
     private IEnumerator TakeStep(int legIndex)
