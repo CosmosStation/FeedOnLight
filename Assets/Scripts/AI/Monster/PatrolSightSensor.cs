@@ -17,7 +17,7 @@ namespace AI.Monster
             if (Player == null)
                 return false;
 
-            _ray = new Ray(this.transform.position, Player.position - this.transform.position);
+            _ray = new Ray(this.transform.position + new Vector3(0, 0.5f, 0), Player.position - this.transform.position + new Vector3(0, 0.5f, 0));
 
             if (Vector3.Dot(_ray.direction, this.transform.forward) < 0)
                 return false;

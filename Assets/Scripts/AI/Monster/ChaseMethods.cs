@@ -1,17 +1,17 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace AI.Monster
 {
     public class ChaseMethods : MonoBehaviour
     {
-        public Transform Player;
         public Transform Monster;
 
         [SerializeField] private LayerMask _ignoreMask;
 
         private Ray _ray;
 
-        public bool CheckIfPlayerInSight()
+        public bool CheckIfPlayerInSight(Transform Player)
         {
             if (Player == null)
                 return false;
@@ -32,6 +32,11 @@ namespace AI.Monster
             }
 
             return false;
+        }
+
+        public void chasePlayer(Transform Player, NavMeshAgent navMeshAgent)
+        {
+            navMeshAgent.SetDestination(Player.position);
         }
 
         private void OnDrawGizmos()
