@@ -21,7 +21,7 @@ namespace AI.Monster
             if (Vector3.Dot(_ray.direction, Monster.transform.forward) < 0)
                 return false;
 
-            if (!Physics.Raycast(_ray, out var hit, 100, ~_ignoreMask))
+            if (!Physics.Raycast(_ray, out var hit, 200, ~_ignoreMask))
             {
                 return false;
             }
