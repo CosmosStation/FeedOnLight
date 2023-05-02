@@ -10,6 +10,7 @@ TagManager:
   - Door
   - InteractItem
   - Interact
+  - ChangeColorItem
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - Character
   - Ground
   - Interactable
-  - 
+  - Monster
   - 
   - 
   - 

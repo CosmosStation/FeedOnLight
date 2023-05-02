@@ -1,4 +1,4 @@
-﻿using FMODUnity;
+using FMODUnity;
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
@@ -17,6 +17,8 @@ namespace StarterAssets
 		public float MoveSpeed = 4.0f;
 		[Tooltip("Sprint speed of the character in m/s")]
 		public float SprintSpeed = 6.0f;
+		[Tooltip("Crouch speed of the character in m/s")]
+		public float CrouchSpeed = 2.0f;
 		[Tooltip("Rotation speed of the character")]
 		public float RotationSpeed = 1.0f;
 		[Tooltip("Acceleration and deceleration")]
@@ -51,21 +53,28 @@ namespace StarterAssets
 		public float TopClamp = 90.0f;
 		[Tooltip("How far in degrees can you move the camera down")]
 		public float BottomClamp = -90.0f;
+		[Tooltip("Camera height in crouch position")]
+		public float CrouchCameraPosition = 0.528f;
 
 		// FMOD
 		[Header("Sound")] [SerializeField] private StudioEventEmitter _footStepsSource;
 
 		[Header("Interaction")] public PlayerInteractionController _interaction;
 		
+		// Hidden from monster
+		public bool hidden = false;
+		
 		// cinemachine
 		private float _cinemachineTargetPitch;
 		private bool _IsCameraLocked = false;
+		private Vector3 _cinemachineStandPosition;
 
 		// player
 		private float _speed;
 		private float _rotationVelocity;
 		private float _verticalVelocity;
 		private float _terminalVelocity = 53.0f;
+		private float _colliderStandHeight;
 
 		// timeout deltatime
 		private float _jumpTimeoutDelta;
@@ -107,6 +116,8 @@ namespace StarterAssets
 		{
 			_controller = GetComponent<CharacterController>();
 			_input = GetComponent<StarterAssetsInputs>();
+			_cinemachineStandPosition = CinemachineCameraTarget.transform.position;
+			_colliderStandHeight = _controller.height;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 			_playerInput = GetComponent<PlayerInput>();
 #else
@@ -178,9 +189,30 @@ namespace StarterAssets
 
 		private void Move()
 		{
-			// set target speed based on move speed, sprint speed and if sprint is pressed
-			float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
+			// set target speed based on sprint, crouch
+			float targetSpeed = MoveSpeed;
+			if (_input.sprint)  targetSpeed = SprintSpeed;
+			if (_input.crouch) targetSpeed = CrouchSpeed;
 
+			// Меняем высоту камеры и капсулы
+			if (_input.crouch) {
+				_controller.height = 0.5f;
+				Vector3 CamPosition  = CinemachineCameraTarget.transform.position;
+				CinemachineCameraTarget.transform.position = new Vector3(CamPosition.x, CrouchCameraPosition, CamPosition.z);
+			} else if (_controller.height != _colliderStandHeight) {
+				Vector3 capsulePosition  = _controller.transform.position;
+				Vector3 targetCapsulePosition = new Vector3(capsulePosition.x, _cinemachineStandPosition.y, capsulePosition.z);
+				Collider[] hits = Physics.OverlapCapsule(capsulePosition, targetCapsulePosition, _controller.radius);
+
+				// Предвещаю баги из-за такого решения
+				// Одна коллизия - пол, другая - PlayerCapsule, третья - второй коллайдер
+				if (hits.Length <= 3) {
+					Vector3 CamPosition  = CinemachineCameraTarget.transform.position;
+					_controller.height = _colliderStandHeight;
+					CinemachineCameraTarget.transform.position = new Vector3(CamPosition.x, _cinemachineStandPosition.y, CamPosition.z);
+				}
+			}
+			
 			// a simplistic acceleration and deceleration designed to be easy to remove, replace, or iterate upon
 
 			// note: Vector2's == operator uses approximation so is not floating point error prone, and is cheaper than magnitude
