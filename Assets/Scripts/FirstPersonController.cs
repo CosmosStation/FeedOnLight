@@ -1,4 +1,5 @@
 using FMODUnity;
+using PixelCrushers.DialogueSystem.UnityGUI;
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
@@ -75,7 +76,8 @@ namespace StarterAssets
 		private float _verticalVelocity;
 		private float _terminalVelocity = 53.0f;
 		private float _colliderStandHeight;
-
+		private bool _isMovementLocked = false;
+		
 		// timeout deltatime
 		private float _jumpTimeoutDelta;
 		private float _fallTimeoutDelta;
@@ -135,7 +137,11 @@ namespace StarterAssets
 		{
 			JumpAndGravity();
 			GroundedCheck();
-			Move();
+			
+			if (!_isMovementLocked)
+			{
+				Move();
+			}
 		}
 
 		private void LateUpdate()
@@ -153,7 +159,7 @@ namespace StarterAssets
 		private void CameraRotation()
 		{
 			// if there is an input
-			if (_input.look.sqrMagnitude >= _threshold && _IsCameraLocked == false)
+			if (!_IsCameraLocked && _input.look.sqrMagnitude >= _threshold)
 			{
 				//Don't multiply mouse input by Time.deltaTime
 				float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
@@ -172,14 +178,24 @@ namespace StarterAssets
 			}
 		}
 
-		private void LockCamera()
+		public void LockCamera()
 		{
 			_IsCameraLocked = true;
 		}
 
-		private void UnlockCamera()
+		public void UnlockCamera()
 		{
 			_IsCameraLocked = false;
+		}
+
+		public void LockMovement()
+		{
+			_isMovementLocked = true;
+		}
+
+		public void UnlockMovement()
+		{
+			_isMovementLocked = false;
 		}
 
 		public void FocusOnTarget()
@@ -278,7 +294,7 @@ namespace StarterAssets
 				}
 
 				// Jump
-				if (_input.jump && _jumpTimeoutDelta <= 0.0f)
+				if (!_isMovementLocked && _input.jump && _jumpTimeoutDelta <= 0.0f)
 				{
 					// the square root of H * -2 * G = how much velocity needed to reach desired height
 					_verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
