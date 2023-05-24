@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 3468850991118494144, guid: a3452d888d5183d4ba3b2f9856d94379,
         type: 3}
       propertyPath: m_Name
-      value: ChangeColorItem Green
+      value: ChangeColorItem Green Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3468850991118494146, guid: a3452d888d5183d4ba3b2f9856d94379,
         type: 3}
@@ -20,7 +20,7 @@ PrefabInstance:
     - target: {fileID: 3468850991118494146, guid: a3452d888d5183d4ba3b2f9856d94379,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.791
+      value: 4.361
       objectReference: {fileID: 0}
     - target: {fileID: 3468850991118494146, guid: a3452d888d5183d4ba3b2f9856d94379,
         type: 3}
@@ -30,7 +30,7 @@ PrefabInstance:
     - target: {fileID: 3468850991118494146, guid: a3452d888d5183d4ba3b2f9856d94379,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -17.009
+      value: -17.65
       objectReference: {fileID: 0}
     - target: {fileID: 3468850991118494146, guid: a3452d888d5183d4ba3b2f9856d94379,
         type: 3}

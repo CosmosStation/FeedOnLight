@@ -15,6 +15,7 @@ namespace StarterAssets
 		public bool interact = false;
 		public bool crouch = false;
 		public bool light = false;
+		public bool openInventory = false;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -28,6 +29,8 @@ namespace StarterAssets
 		[Header("Interaction")] public PlayerInteractionController Interaction;
 
 		[Header("Light")] public LightController Light;
+
+		[Header("Inventory")] public InventoryController Inventory;
 		
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 		public void OnMove(InputValue value)
@@ -77,6 +80,11 @@ namespace StarterAssets
 		{
 			AltActionInput(value.isPressed);
 		}
+
+		public void OnOpenInventory(InputValue value)
+        {
+			OpenInventoryInput(value.isPressed);
+        }
 #endif
 
 
@@ -127,7 +135,14 @@ namespace StarterAssets
 			light = newLightState;
 			Light.Turn();
 		}
-		
+
+		public void OpenInventoryInput(bool newOpenInventoryState)
+        {
+			openInventory = newOpenInventoryState;
+			Inventory.OpenInventory();
+        }
+
+
 		private void OnApplicationFocus(bool hasFocus)
 		{
 			SetCursorState(cursorLocked);

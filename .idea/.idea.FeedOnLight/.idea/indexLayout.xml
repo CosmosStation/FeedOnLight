@@ -3,7 +3,6 @@
   <component name="ContentModelUserStore">
     <attachedFolders />
     <explicitIncludes>
-      <Path>Assets</Path>
       <Path>Library/PackageCache/com.unity.burst@1.6.5</Path>
       <Path>Library/PackageCache/com.unity.burst@1.8.2</Path>
       <Path>Library/PackageCache/com.unity.cinemachine@2.8.9</Path>
@@ -13,7 +12,7 @@
       <Path>Library/PackageCache/com.unity.ide.rider@3.0.14</Path>
       <Path>Library/PackageCache/com.unity.ide.rider@3.0.18</Path>
       <Path>Library/PackageCache/com.unity.ide.visualstudio@2.0.15</Path>
-      <Path>Library/PackageCache/com.unity.ide.visualstudio@2.0.17</Path>
+      <Path>Library/PackageCache/com.unity.ide.visualstudio@2.0.18</Path>
       <Path>Library/PackageCache/com.unity.ide.vscode@1.2.5</Path>
       <Path>Library/PackageCache/com.unity.inputsystem@1.5.0</Path>
       <Path>Library/PackageCache/com.unity.mathematics@1.2.6</Path>
@@ -37,6 +36,7 @@
     <explicitExcludes>
       <Path>.git</Path>
       <Path>.idea</Path>
+      <Path>.vs</Path>
       <Path>Library</Path>
       <Path>Logs</Path>
       <Path>Temp</Path>
