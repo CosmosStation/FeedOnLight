@@ -4,30 +4,33 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.ProBuilder.Shapes;
 
-public class DoorUlitmate : MonoBehaviour
+namespace Interactables
 {
-    public enum DoorTypes
+    public class DoorUlitmate : MonoBehaviour
     {
-        None,
-        Single,
-        Double
-    }
-
-    public DoorTypes DoorType;
-    public DOTweenAnimation[] DoorGameObjects;
-    
-    private bool isOpen = false;
-
-    public void UseDoor()
-    {
-        Debug.Log(DoorType);
-        Debug.Log(isOpen);
-        foreach (var doTweenAnimation in DoorGameObjects)
+        public enum DoorTypes
         {
-            if (isOpen) doTweenAnimation.DOPlayBackwards();
-            else doTweenAnimation.DOPlayForward();
+            None,
+            Single,
+            Double
         }
 
-        isOpen = !isOpen;
+        public DoorTypes DoorType;
+        public DOTweenAnimation[] DoorGameObjects;
+
+        private bool isOpen = false;
+
+        public void UseDoor()
+        {
+            Debug.Log(DoorType);
+            Debug.Log(isOpen);
+            foreach (var doTweenAnimation in DoorGameObjects)
+            {
+                if (isOpen) doTweenAnimation.DOPlayBackwards();
+                else doTweenAnimation.DOPlayForward();
+            }
+
+            isOpen = !isOpen;
+        }
     }
 }

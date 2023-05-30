@@ -2,13 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChangeColorItem : MonoBehaviour
+namespace Interactables
 {
-    [SerializeField] private Color color = new Color(1, 1, 1);
-    [SerializeField] private string colorName = "white";
-    [SerializeField] private Light light;
+    public class ChangeColorItem : MonoBehaviour
+    {
+        [SerializeField] private Color color = new Color(1, 1, 1);
+        [SerializeField] private string colorName = "white";
+        [SerializeField] private Light light;
 
-    public void ChangeColor() {
-        light.color = color;
+        public void ChangeColor()
+        {
+            light.color = color;
+        }
     }
 }

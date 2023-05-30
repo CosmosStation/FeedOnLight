@@ -4,6 +4,7 @@ using DG.Tweening;
 using StarterAssets;
 using Unity.VisualScripting;
 using UnityEngine;
+using Interactables;
 using UnityEngine.InputSystem;
 [System.Serializable]
 
@@ -64,7 +65,7 @@ public class PlayerInteractionController : MonoBehaviour
     private GameObject objectHeld;
     private bool isObjectHeld;
     private bool tryPickupObject;
-	
+
     void Start () {
         isObjectHeld = false;
         tryPickupObject = false;
