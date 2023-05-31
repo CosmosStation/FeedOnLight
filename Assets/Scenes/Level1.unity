@@ -6452,6 +6452,75 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.012000003, y: 0.009649999, z: 0.0060000014}
   m_Center: {x: 0, y: 0.0046750032, z: 0}
+--- !u!1001 &647191667
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 768341336316873495, guid: c237738b7a45348a2b0fc78c619f91a5,
+        type: 3}
+      propertyPath: m_Name
+      value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2518240147042451964, guid: c237738b7a45348a2b0fc78c619f91a5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2518240147042451964, guid: c237738b7a45348a2b0fc78c619f91a5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2518240147042451964, guid: c237738b7a45348a2b0fc78c619f91a5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2518240147042451964, guid: c237738b7a45348a2b0fc78c619f91a5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2518240147042451964, guid: c237738b7a45348a2b0fc78c619f91a5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2518240147042451964, guid: c237738b7a45348a2b0fc78c619f91a5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2518240147042451964, guid: c237738b7a45348a2b0fc78c619f91a5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2518240147042451964, guid: c237738b7a45348a2b0fc78c619f91a5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2518240147042451964, guid: c237738b7a45348a2b0fc78c619f91a5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2518240147042451964, guid: c237738b7a45348a2b0fc78c619f91a5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2518240147042451964, guid: c237738b7a45348a2b0fc78c619f91a5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c237738b7a45348a2b0fc78c619f91a5, type: 3}
 --- !u!1001 &647828092
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8725,6 +8794,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.012000005, y: 0.009649999, z: 0.0060000014}
   m_Center: {x: 0, y: 0.0046750032, z: 0.000000007450581}
+--- !u!114 &884583564 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -4225433650769302865, guid: c237738b7a45348a2b0fc78c619f91a5,
+    type: 3}
+  m_PrefabInstance: {fileID: 647191667}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40e61de50c484401a9236c0f8dfde455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &887039560 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3594243245622329198, guid: 8e78c0154e6e6fb45bf6546979852e5f,
@@ -14166,12 +14247,13 @@ PrefabInstance:
         UnityEngine.AIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"Monster","value":{"$content":2,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"Player","value":{"$content":3,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
         UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"MonsterCollider","value":{"$content":4,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.SphereCollider,
-        UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+        UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"GameEvents","value":{"$content":5,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"GameEvents,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
       objectReference: {fileID: 0}
     - target: {fileID: 8066100370564632079, guid: 9759f08c3eb954c92b5556e2d5fb9511,
         type: 3}
       propertyPath: _data._objectReferences.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8066100370564632079, guid: 9759f08c3eb954c92b5556e2d5fb9511,
         type: 3}
@@ -14199,6 +14281,11 @@ PrefabInstance:
       propertyPath: _data._objectReferences.Array.data[4]
       value: 
       objectReference: {fileID: 1408460936}
+    - target: {fileID: 8066100370564632079, guid: 9759f08c3eb954c92b5556e2d5fb9511,
+        type: 3}
+      propertyPath: _data._objectReferences.Array.data[5]
+      value: 
+      objectReference: {fileID: 884583564}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9759f08c3eb954c92b5556e2d5fb9511, type: 3}
 --- !u!1 &1408460935 stripped
