@@ -15,6 +15,8 @@ public class CloseInventory : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         PersonController.UnlockCamera();
+
+        InventoryManager.Instance.CleanInventoryList();
     }
 
 }
