@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 19628835a2e07af429e2ecdf5f153f38, type: 3}
-  m_Name: Green Syringe
+  m_Name: Blue Syringe
   m_EditorClassIdentifier: 
-  id: 1
+  id: 4
   itemName: Syringe
-  value: green
-  icon: {fileID: 21300000, guid: 13b8dbf1586d47c4b939fbe70231da91, type: 3}
+  value: blue
+  icon: {fileID: 21300000, guid: 17665a5c67c067f4591db21a44a467a6, type: 3}
   itemType: 0

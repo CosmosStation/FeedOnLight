@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 3468850991118494144, guid: a3452d888d5183d4ba3b2f9856d94379,
         type: 3}
       propertyPath: m_Name
-      value: ChangeColorItem Blue
+      value: ChangeColorItem Blue Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3468850991118494146, guid: a3452d888d5183d4ba3b2f9856d94379,
         type: 3}
@@ -89,3 +89,35 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: e423997f224fdbc4c8dac5b85ba9a7f1, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3452d888d5183d4ba3b2f9856d94379, type: 3}
+--- !u!1 &5167709444112246740 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3468850991118494144, guid: a3452d888d5183d4ba3b2f9856d94379,
+    type: 3}
+  m_PrefabInstance: {fileID: 8616707447116844564}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-7300772020937303621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5167709444112246740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ccf1b32c4b08d248beb03767f7ab6ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Item: {fileID: 11400000, guid: 6a64e6f0f3c372c4ab47c29e24f98348, type: 2}
+--- !u!114 &9050110865067596798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5167709444112246740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a383865766c61f42879b8be6121c000, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Item: {fileID: 11400000, guid: 6a64e6f0f3c372c4ab47c29e24f98348, type: 2}

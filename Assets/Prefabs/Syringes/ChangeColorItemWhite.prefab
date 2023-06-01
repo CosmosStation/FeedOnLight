@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &6612137136393679828
+--- !u!1001 &8729410122757971456
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 3468850991118494144, guid: a3452d888d5183d4ba3b2f9856d94379,
         type: 3}
       propertyPath: m_Name
-      value: ChangeColorItem Lilac Variant
+      value: ChangeColorItemWhite
       objectReference: {fileID: 0}
     - target: {fileID: 3468850991118494146, guid: a3452d888d5183d4ba3b2f9856d94379,
         type: 3}
@@ -20,7 +20,7 @@ PrefabInstance:
     - target: {fileID: 3468850991118494146, guid: a3452d888d5183d4ba3b2f9856d94379,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.223
+      value: 5.8538513
       objectReference: {fileID: 0}
     - target: {fileID: 3468850991118494146, guid: a3452d888d5183d4ba3b2f9856d94379,
         type: 3}
@@ -30,7 +30,7 @@ PrefabInstance:
     - target: {fileID: 3468850991118494146, guid: a3452d888d5183d4ba3b2f9856d94379,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -15.778
+      value: -16.213
       objectReference: {fileID: 0}
     - target: {fileID: 3468850991118494146, guid: a3452d888d5183d4ba3b2f9856d94379,
         type: 3}
@@ -69,55 +69,41 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3468850991118494147, guid: a3452d888d5183d4ba3b2f9856d94379,
         type: 3}
-      propertyPath: color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3468850991118494147, guid: a3452d888d5183d4ba3b2f9856d94379,
-        type: 3}
-      propertyPath: color.g
-      value: 0.56078434
-      objectReference: {fileID: 0}
-    - target: {fileID: 3468850991118494147, guid: a3452d888d5183d4ba3b2f9856d94379,
-        type: 3}
-      propertyPath: color.r
-      value: 0.77841383
-      objectReference: {fileID: 0}
-    - target: {fileID: 5000581351950614194, guid: a3452d888d5183d4ba3b2f9856d94379,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: light
       value: 
-      objectReference: {fileID: 2100000, guid: c49d5fbdc924d5842915faadc6f29b8f, type: 2}
-    m_RemovedComponents: []
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3468850991118494147, guid: a3452d888d5183d4ba3b2f9856d94379, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a3452d888d5183d4ba3b2f9856d94379, type: 3}
---- !u!1 &7773444027768691220 stripped
+--- !u!1 &5262119544806258624 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3468850991118494144, guid: a3452d888d5183d4ba3b2f9856d94379,
     type: 3}
-  m_PrefabInstance: {fileID: 6612137136393679828}
+  m_PrefabInstance: {fileID: 8729410122757971456}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &-4569615587456687762
+--- !u!114 &3430391278448973410
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7773444027768691220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ccf1b32c4b08d248beb03767f7ab6ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Item: {fileID: 11400000, guid: d562b77b58cb2454398a96dcdf7dad09, type: 2}
---- !u!114 &-1137293266729119337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7773444027768691220}
+  m_GameObject: {fileID: 5262119544806258624}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a383865766c61f42879b8be6121c000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Item: {fileID: 11400000, guid: d562b77b58cb2454398a96dcdf7dad09, type: 2}
+  Item: {fileID: 11400000, guid: 572987223b814cb42948b5321c3d252a, type: 2}
+--- !u!114 &5949294179725797636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5262119544806258624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ccf1b32c4b08d248beb03767f7ab6ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Item: {fileID: 11400000, guid: 572987223b814cb42948b5321c3d252a, type: 2}

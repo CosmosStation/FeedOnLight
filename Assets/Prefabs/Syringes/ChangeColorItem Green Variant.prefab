@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChangeColorItem Green Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 3468850991118494144, guid: a3452d888d5183d4ba3b2f9856d94379,
+        type: 3}
+      propertyPath: m_TagString
+      value: PickUpItem
+      objectReference: {fileID: 0}
     - target: {fileID: 3468850991118494146, guid: a3452d888d5183d4ba3b2f9856d94379,
         type: 3}
       propertyPath: m_RootOrder
@@ -87,7 +92,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: eecb00989cf347d4b8350a0dc8d3ce2b, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3468850991118494147, guid: a3452d888d5183d4ba3b2f9856d94379, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a3452d888d5183d4ba3b2f9856d94379, type: 3}
 --- !u!1 &8553052951352134135 stripped
 GameObject:
