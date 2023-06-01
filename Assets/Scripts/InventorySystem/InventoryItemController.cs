@@ -21,12 +21,18 @@ public class InventoryItemController : MonoBehaviour
         switch (item.itemType)
         {
             case Item.ItemType.ChangeColorSyringe:
-                Debug.Log("Use Change Color Syringe");
                 _lightController = player.GetComponent<LightController>();
                 _lightController.ChangeColor(item.value);
                 break;
         }
 
-        // To Do Remove
+        RemoveItem();
+    }
+
+    public void RemoveItem()
+    {
+        InventoryManager.Instance.Remove(item);
+
+        Destroy(gameObject);
     }
 }
