@@ -16,7 +16,10 @@ public class InventoryController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
         PersonController.LockCamera();
 
-        _inventory.SetActive(true);
-        InventoryManager.ListItems();
+        if (!_inventory.activeSelf)
+        {
+            _inventory.SetActive(true);
+            InventoryManager.ListItems();
+        }
     }
 }
