@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.ProBuilder.Shapes;
+using System;
 
 public class DoorUlitmate : MonoBehaviour
 {
+    // public static Action onUnlocked;
+
     public enum DoorTypes
     {
         None,
@@ -29,5 +32,10 @@ public class DoorUlitmate : MonoBehaviour
         }
 
         isOpen = !isOpen;
+    }
+
+    public void UnlockDoor()
+    {
+
     }
 }

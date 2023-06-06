@@ -123,11 +123,6 @@ public class PlayerInteractionController : MonoBehaviour
         {
             switch (currentHit.transform.tag)
             {
-                /*case "ChangeColorItem":
-                    objectHeld = currentHit.transform.gameObject;
-                    _changeColorItem = objectHeld.GetComponent<ChangeColorItem>();
-                    _changeColorItem.ChangeColor();
-                    break;*/
                 case "PickUpItem":
                     objectHeld = currentHit.transform.gameObject;
                     _pickUpItem = objectHeld.GetComponent<ItemPickUp>();
@@ -150,11 +145,8 @@ public class PlayerInteractionController : MonoBehaviour
                 case "Door":
                     objectHeld = currentHit.transform.gameObject;
                     isObjectHeld = true;
-                    Debug.Log("OpenDoor");
-                    // DoorUlitmate door = doorObj.GetComponent<DoorUlitmate>();
-                    // door.UseDoor();
-                    objectHeld.GetComponent<Rigidbody>().useGravity = true;
-                    objectHeld.GetComponent<Rigidbody>().freezeRotation = false;
+                    DoorController door = objectHeld.GetComponent<DoorController>();
+                    door.UnlockDoor();
                     break;
                 case "Interact":
                     objectHeld = currentHit.transform.gameObject;
