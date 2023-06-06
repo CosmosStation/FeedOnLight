@@ -23,10 +23,14 @@ public class InventoryItemController : MonoBehaviour
             case Item.ItemType.ChangeColorSyringe:
                 _lightController = player.GetComponent<LightController>();
                 _lightController.ChangeColor(item.value);
+                RemoveItem();
+                break;
+            case Item.ItemType.Key:
+                // To Do Нужно какое-то сообщение игроку
+                Debug.Log("Trying to use key from inventory");
                 break;
         }
 
-        RemoveItem();
     }
 
     public void RemoveItem()
