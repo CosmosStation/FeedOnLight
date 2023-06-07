@@ -11,6 +11,7 @@ TagManager:
   - InteractItem
   - Interact
   - ChangeColorItem
+  - PickUpItem
   layers:
   - Default
   - TransparentFX

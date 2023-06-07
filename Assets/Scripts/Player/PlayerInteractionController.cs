@@ -60,7 +60,8 @@ public class PlayerInteractionController : MonoBehaviour
     private RaycastHit currentHit;
     private bool isReadyToInteract = false;
     private AbsorbItem _absorbItem;
-    private ChangeColorItem _changeColorItem;
+    // private ChangeColorItem _changeColorItem;
+    private ItemPickUp _pickUpItem;
     private InspectableItem _inspectableItem;
     private List<Tween> _tweens;
     private GameObject objectHeld;
@@ -143,10 +144,10 @@ public class PlayerInteractionController : MonoBehaviour
         {
             switch (currentHit.transform.tag)
             {
-                case "ChangeColorItem":
+                case "PickUpItem":
                     objectHeld = currentHit.transform.gameObject;
-                    _changeColorItem = objectHeld.GetComponent<ChangeColorItem>();
-                    _changeColorItem.ChangeColor();
+                    _pickUpItem = objectHeld.GetComponent<ItemPickUp>();
+                    _pickUpItem.PickUp();
                     break;
                 case "AbsorbItem":
                     objectHeld = currentHit.transform.gameObject;
@@ -165,11 +166,8 @@ public class PlayerInteractionController : MonoBehaviour
                 case "Door":
                     objectHeld = currentHit.transform.gameObject;
                     isObjectHeld = true;
-                    Debug.Log("OpenDoor");
-                    // DoorUlitmate door = doorObj.GetComponent<DoorUlitmate>();
-                    // door.UseDoor();
-                    objectHeld.GetComponent<Rigidbody>().useGravity = true;
-                    objectHeld.GetComponent<Rigidbody>().freezeRotation = false;
+                    DoorController door = objectHeld.GetComponent<DoorController>();
+                    door.UnlockDoor();
                     break;
                 case "Interact":
                     objectHeld = currentHit.transform.gameObject;

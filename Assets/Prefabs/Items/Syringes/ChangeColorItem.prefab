@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3468850991118494146}
-  - component: {fileID: 3468850991118494147}
   - component: {fileID: 3468850991118494157}
   m_Layer: 10
   m_Name: ChangeColorItem
@@ -34,21 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3468850991118494147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3468850991118494144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc090536ab2111f42b78a8c3f9ae5c95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 0}
-  colorName: red
-  light: {fileID: 0}
 --- !u!135 &3468850991118494157
 SphereCollider:
   m_ObjectHideFlags: 0
