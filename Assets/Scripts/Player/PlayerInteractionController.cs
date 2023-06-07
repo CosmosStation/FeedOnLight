@@ -1,11 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using StarterAssets;
-using Unity.VisualScripting;
 using UnityEngine;
 using Interactables;
-using UnityEngine.InputSystem;
 [System.Serializable]
 
 public class GrabObjectClass{
@@ -42,6 +39,10 @@ public class TagsClass{
 
 public class PlayerInteractionController : MonoBehaviour
 {
+    [Header("OUTSIDE INFLUENCE")]
+    [SerializeField] private GrabMethods MonsterGrabManager;
+    private bool _isGrabbed = false;
+    
     [Header("INTERACTION PARAMETERS")]
     public LayerMask layerMaskInteract;
     public GrabObjectClass ObjectGrab = new GrabObjectClass();
@@ -66,10 +67,19 @@ public class PlayerInteractionController : MonoBehaviour
     private bool isObjectHeld;
     private bool tryPickupObject;
 
-    void Start () {
+    void Start()
+    {
         isObjectHeld = false;
         tryPickupObject = false;
         objectHeld = null;
+
+        GameEvents.current.onPlayerGrabbed += onGrabbed;
+    }
+
+    void onGrabbed()
+    {
+        Debug.Log("Player Grabbed");
+        _isGrabbed = true;
     }
     
     void FixedUpdate()
@@ -111,6 +121,16 @@ public class PlayerInteractionController : MonoBehaviour
 
     public void Interact(bool inputInteract)
     {
+        if (_isGrabbed)
+        {
+            MonsterGrabManager.DoResist();
+            if (MonsterGrabManager.checkIsGrabbed() == false)
+            {
+                _isGrabbed = false;
+            }
+            return;
+        }
+        
         if ((!objectHeld && !isReadyToInteract)) return;
         if (!inputInteract && isObjectHeld)
         {

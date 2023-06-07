@@ -133,6 +133,8 @@ namespace StarterAssets
 
 			GameEvents.current.onPlayerMovementLock += LockCamera;
 			GameEvents.current.onPlayerMovementLock += LockMovement;
+			GameEvents.current.onPlayerMovementUnlock += UnlockCamera;
+			GameEvents.current.onPlayerMovementUnlock += UnlockMovement;
 			
 			InvokeRepeating("FootStepsSoundEmit", 0, 0.5f);
 		}

@@ -10,12 +10,17 @@ public class GameEvents : MonoBehaviour
         current = this;
     }
 
+    private void Start()
+    {
+        Debug.Log(onPlayerGrabbed);
+    }
+
     public event Action onPlayerMovementLock;
     
     public event Action onPlayerMovementUnlock;
 
     public event Action onPlayerGrabbed;
-
+    
     public void PlayerMovementLock()
     {
         if (onPlayerMovementLock != null)
