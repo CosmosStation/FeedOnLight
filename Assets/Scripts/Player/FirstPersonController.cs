@@ -1,5 +1,6 @@
 using FMODUnity;
 using PixelCrushers.DialogueSystem.UnityGUI;
+using Unity.VisualScripting;
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
@@ -129,6 +130,11 @@ namespace StarterAssets
 			// reset our timeouts on start
 			_jumpTimeoutDelta = JumpTimeout;
 			_fallTimeoutDelta = FallTimeout;
+
+			GameEvents.current.onPlayerMovementLock += LockCamera;
+			GameEvents.current.onPlayerMovementLock += LockMovement;
+			GameEvents.current.onPlayerMovementUnlock += UnlockCamera;
+			GameEvents.current.onPlayerMovementUnlock += UnlockMovement;
 			
 			InvokeRepeating("FootStepsSoundEmit", 0, 0.5f);
 		}
@@ -146,7 +152,10 @@ namespace StarterAssets
 
 		private void LateUpdate()
 		{
-			CameraRotation();
+			if (!_IsCameraLocked)
+			{
+				CameraRotation();
+			}
 		}
 
 		private void GroundedCheck()
@@ -159,7 +168,7 @@ namespace StarterAssets
 		private void CameraRotation()
 		{
 			// if there is an input
-			if (!_IsCameraLocked && _input.look.sqrMagnitude >= _threshold)
+			if (_input.look.sqrMagnitude >= _threshold)
 			{
 				//Don't multiply mouse input by Time.deltaTime
 				float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
@@ -181,21 +190,25 @@ namespace StarterAssets
 		public void LockCamera()
 		{
 			_IsCameraLocked = true;
+			Debug.Log("LockCamera" + _IsCameraLocked);
 		}
 
 		public void UnlockCamera()
 		{
 			_IsCameraLocked = false;
+			Debug.Log("LockCamera" + _IsCameraLocked);
 		}
 
 		public void LockMovement()
 		{
 			_isMovementLocked = true;
+			Debug.Log("LockMovement" + _isMovementLocked);
 		}
 
 		public void UnlockMovement()
 		{
 			_isMovementLocked = false;
+			Debug.Log("LockMovement" + _isMovementLocked);
 		}
 
 		public void FocusOnTarget()

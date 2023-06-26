@@ -31,7 +31,9 @@ namespace StarterAssets
 		[Header("Light")] public LightController Light;
 
 		[Header("Inventory")] public InventoryController Inventory;
-		
+
+		[Header("Player Grabbed by Monster")] public GrabMethods GrabMethods;
+
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 		public void OnMove(InputValue value)
 		{

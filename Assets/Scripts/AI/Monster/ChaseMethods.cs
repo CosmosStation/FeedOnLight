@@ -39,6 +39,11 @@ namespace AI.Monster
             navMeshAgent.SetDestination(Player.position);
         }
 
+        public void stopChase(NavMeshAgent navMeshAgent)
+        {
+            navMeshAgent.SetDestination(Monster.position);
+        }
+
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.red;
