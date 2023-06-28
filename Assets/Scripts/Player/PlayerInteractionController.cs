@@ -87,7 +87,7 @@ public class PlayerInteractionController : MonoBehaviour
     {
         if (isObjectHeld)
         {
-            HoldObject();
+            // HoldObject();
         }
         else
         {

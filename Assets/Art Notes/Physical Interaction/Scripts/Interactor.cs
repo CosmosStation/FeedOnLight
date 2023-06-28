@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using StarterAssets;
+using UnityEngine;
 
 namespace ArtNotes.PhysicalInteraction
 {
@@ -12,7 +13,9 @@ namespace ArtNotes.PhysicalInteraction
         InteractableObject _interactable;
         RectTransform _handRect;
         Camera _camera;
-        RaycastHit _hit;
+        private RaycastHit _hit;
+        
+        private StarterAssetsInputs _input;
 
         public float LookSpeedMultiply { get; private set; } = 1;
 		#endregion
