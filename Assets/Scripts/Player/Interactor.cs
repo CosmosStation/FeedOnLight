@@ -14,7 +14,7 @@ public class Interactor : MonoBehaviour
     Camera _camera;
     private RaycastHit _hit;
     
-    [SerializeField] private StarterAssetsInputs _input;
+    [SerializeField] private InputHandler _input;
 
     public float LookSpeedMultiply { get; private set; } = 1;
 	#endregion
@@ -23,13 +23,6 @@ public class Interactor : MonoBehaviour
     {
         _camera = Camera.main;
         Cursor.lockState = CursorLockMode.Locked; // TODO displace to GameManager
-
-        if (_hand)
-        {
-            _hand.SetEnableImage(false);
-            _handRect = _hand.GetComponent<RectTransform>();
-            _handRect.position = new Vector3(Screen.width / 2, Screen.height / 2);
-        }
     }
 
     void Update()
