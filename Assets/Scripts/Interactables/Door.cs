@@ -1,6 +1,8 @@
 using UnityEngine;
+using Executors;
+using Player;
 
-namespace ArtNotes.PhysicalInteraction
+namespace Interactables
 {
     [RequireComponent(typeof(HingeJoint))]
     public class Door : InteractableObject
@@ -8,6 +10,7 @@ namespace ArtNotes.PhysicalInteraction
         [SerializeField] Executor _closeDoorExecutor, _lockedExecutor;
         [SerializeField] int _force = 9;
         [SerializeField] bool _closedWhenMinLimits = true, _doorLocked = false;
+        [SerializeField] InputHandler _input;
         Rigidbody _rigidbody;
         Transform _camera;
         HingeJoint _hinge;
@@ -49,7 +52,7 @@ namespace ArtNotes.PhysicalInteraction
             if (!_isMove) return;
 
             _hinge.limits = new JointLimits() { min = _startLimitsMin, max = _startLimitsMax };
-            _rigidbody.AddForceAtPosition(_camera.forward * Input.GetAxis("Mouse Y") * _force, HitPos);
+            _rigidbody.AddForceAtPosition(_camera.forward * _input.look.y * _force, HitPos);
         }
 
         public override void InteractStart(RaycastHit hit)

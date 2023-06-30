@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 #endif
 
-namespace StarterAssets
+namespace Player
 {
 	[RequireComponent(typeof(CharacterController))]
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
@@ -61,7 +61,9 @@ namespace StarterAssets
 		// FMOD
 		[Header("Sound")] [SerializeField] private StudioEventEmitter _footStepsSource;
 
-		[Header("Interaction")] public PlayerInteractionController _interaction;
+		[Header("Interaction")] 
+		public InteractionController _interaction;
+		[SerializeField] Interactor _interactor;
 		
 		// Hidden from monster
 		public bool hidden = false;
@@ -173,7 +175,7 @@ namespace StarterAssets
 				//Don't multiply mouse input by Time.deltaTime
 				float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
 				
-				_cinemachineTargetPitch += _input.look.y * RotationSpeed * deltaTimeMultiplier;
+				_cinemachineTargetPitch += _input.look.y * _interactor.LookSpeedMultiply * RotationSpeed * deltaTimeMultiplier;
 				_rotationVelocity = _input.look.x * RotationSpeed * deltaTimeMultiplier;
 
 				// clamp our pitch rotation

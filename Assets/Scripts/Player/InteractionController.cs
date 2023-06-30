@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using ArtNotes.PhysicalInteraction;
 using DG.Tweening;
 using UnityEngine;
 using Interactables;
@@ -58,7 +57,7 @@ namespace Player
 
         void FixedUpdate()
         {
-            if (isObjectHeld)
+            if (isObjectHeld || true)
             {
                 // HoldObject();
             }
@@ -108,6 +107,8 @@ namespace Player
 
                 return;
             }
+
+            return;
 
             if ((!objectHeld && !isReadyToInteract)) return;
             if (!inputInteract && isObjectHeld)

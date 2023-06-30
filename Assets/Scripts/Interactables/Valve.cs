@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ArtNotes.PhysicalInteraction
+namespace Interactables
 {
     [RequireComponent(typeof(HingeJoint))]
     public class Valve : InteractableObject

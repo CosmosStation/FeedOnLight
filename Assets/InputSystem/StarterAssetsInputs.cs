@@ -1,3 +1,4 @@
+using Player;
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
@@ -26,7 +27,7 @@ public class StarterAssetsInputs : MonoBehaviour
 	public bool action = false;
 	public bool altAction = false;
 
-	[Header("Interaction")] public PlayerInteractionController Interaction;
+	[Header("Interaction")] public InteractionController Interaction;
 
 	[Header("Light")] public LightController Light;
 

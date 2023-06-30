@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class EnergyManager : MonoBehaviour
 {
-    public bool increaseMode = false;
+    public bool increaseMode;
     
     [SerializeField] private float startEnergyAmount = 100;
     [SerializeField] private float decreasePoints = 1;
@@ -28,22 +28,22 @@ public class EnergyManager : MonoBehaviour
         Debug.Log(Color.black);
     }
 
-    // private void Update()
-    // {
-    //     _time += Time.deltaTime;
-    //     if (_time >= timeStep)
-    //     {
-    //         _time = 0;
-    //         if (increaseMode)
-    //         {
-    //             this.IncreaseEnergy(increasePoints);
-    //         }
-    //         else
-    //         {
-    //             this.DecreaseEnergy(decreasePoints);
-    //         }
-    //     }
-    // }
+    public void ForcedUpdate()
+    {
+        _time += Time.deltaTime;
+        if (_time >= timeStep)
+        {
+            _time = 0;
+            if (increaseMode)
+            {
+                IncreaseEnergy(increasePoints);
+            }
+            else
+            {
+                DecreaseEnergy(decreasePoints);
+            }
+        }
+    }
 
     public void DecreaseEnergy(float amount)
     {

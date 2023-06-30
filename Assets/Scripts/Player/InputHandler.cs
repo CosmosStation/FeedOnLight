@@ -26,7 +26,7 @@ namespace Player
 		public bool action;
 		public bool altAction;
 
-		[Header("Interaction")] public PlayerInteractionController interaction;
+		[Header("Interaction")] public InteractionController interaction;
 
 		[Header("Light")] public LightController lightController;
 
@@ -107,6 +107,7 @@ namespace Player
 		
 		private void InteractInput(bool newInteractState)
 		{
+			Debug.Log(newInteractState);
 			interact = newInteractState;
 			interaction.Interact(interact);
 		}

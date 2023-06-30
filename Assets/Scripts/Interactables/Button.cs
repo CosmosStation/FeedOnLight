@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace ArtNotes.PhysicalInteraction
+namespace Interactables
 {
     public class Button : InteractableObject
     {

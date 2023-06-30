@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace ArtNotes.PhysicalInteraction
+namespace Interactables
 {
 	[RequireComponent(typeof(Rigidbody))]
 	public class Box : InteractableObject
