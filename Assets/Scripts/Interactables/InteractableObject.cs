@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Executors;
+using Player;
 
 namespace Interactables
 {
@@ -9,7 +10,7 @@ namespace Interactables
 
         [Range(0f, 1f)]
         public float LookingSpeed = 1;
-        public Interactor.HandMode Hand  = Interactor.HandMode.grab; // private set
+        public InteractionController.HandMode Hand  = InteractionController.HandMode.grab; // private set
 
         [SerializeField] internal Executor _mainExecutor, _startExecutor, _endExecutor;
         [SerializeField] internal bool _constHit;

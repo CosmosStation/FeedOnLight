@@ -10,7 +10,7 @@ namespace Interactables
         [SerializeField] bool _onlyOneSwitchOn, _startFromOn, _onlySwitchingOn;
         
         bool _state;
-        Vector3 _startPos; // => _visualButton.position;
+        Vector3 _startPos; // => _visualButton.position; 
         Vector3 _minPos; // => _startPos - _visualButton.up * _clickDistance;
 
         void Start()

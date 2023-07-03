@@ -109,7 +109,6 @@ public class StarterAssetsInputs : MonoBehaviour
 	public void InteractInput(bool newInteractState)
 	{
 		interact = newInteractState;
-		Interaction.Interact(interact);
 	}
 	
 	public void ActionInput(bool newActionState)

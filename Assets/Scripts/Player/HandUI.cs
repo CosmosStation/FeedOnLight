@@ -11,20 +11,20 @@ namespace Player
         [SerializeField] Texture _default;
         [SerializeField] Texture _grab, _door, _button;
 
-        public void SetTexture(Interactor.HandMode hand)
+        public void SetTexture(InteractionController.HandMode hand)
         {
             switch (hand)
             {
-                case Interactor.HandMode.canUse:
+                case InteractionController.HandMode.canUse:
                     if (_image.texture != _default) _image.texture = _default;
                     break;
-                case Interactor.HandMode.grab:
+                case InteractionController.HandMode.grab:
                     if (_image.texture != _grab) _image.texture = _grab;
                     break;
-                case Interactor.HandMode.door:
+                case InteractionController.HandMode.door:
                     if (_image.texture != _door) _image.texture = _door;
                     break;
-                case Interactor.HandMode.button:
+                case InteractionController.HandMode.button:
                     if (_image.texture != _button) _image.texture = _button;
                     break;
                 default:

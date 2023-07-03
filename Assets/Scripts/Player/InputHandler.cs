@@ -109,7 +109,6 @@ namespace Player
 		{
 			Debug.Log(newInteractState);
 			interact = newInteractState;
-			interaction.Interact(interact);
 		}
 		
 		private void ActionInput(bool newActionState)
