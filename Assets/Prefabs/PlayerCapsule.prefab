@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 154702019}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.01, y: 2.121, z: 1.675}
+  m_LocalPosition: {x: -0.01, y: 1.485, z: 0.313}
   m_LocalScale: {x: 0.40920398, y: 0.40920398, z: 0.40920398}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -93,9 +93,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 154702019}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &219671834
@@ -601,14 +609,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Version: 1
+  m_Version: 3
   m_UsePipelineSettings: 1
   m_AdditionalLightsShadowResolutionTier: 2
   m_LightLayerMask: 1
+  m_RenderingLayers: 1
   m_CustomShadowLayers: 0
   m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 1
 --- !u!1 &1333838732
 GameObject:
   m_ObjectHideFlags: 0
@@ -3076,7 +3087,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5393215578589016641
 Transform:
   m_ObjectHideFlags: 0
@@ -3765,6 +3776,10 @@ GameObject:
   - component: {fileID: 135756641613574980}
   - component: {fileID: 958580988}
   - component: {fileID: 958580989}
+  - component: {fileID: 2677650124856103485}
+  - component: {fileID: 5317797228358738936}
+  - component: {fileID: 2112008601947533516}
+  - component: {fileID: 2027883428517278628}
   m_Layer: 8
   m_Name: PlayerCapsule
   m_TagString: Player
@@ -3790,7 +3805,7 @@ Transform:
   - {fileID: 154702020}
   - {fileID: 1333838733}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &8616685848737228382
 CharacterController:
@@ -3800,9 +3815,17 @@ CharacterController:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8616685848737228372}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Height: 2
   m_Radius: 0.4
   m_SlopeLimit: 45
@@ -3822,8 +3845,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55919ac34a26952479f3fc91f777b2fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 8
-  SprintSpeed: 10
+  MoveSpeed: 10
+  SprintSpeed: 20
+  CrouchSpeed: 2
   RotationSpeed: 1
   SpeedChangeRate: 10
   JumpHeight: 1.2
@@ -3839,8 +3863,11 @@ MonoBehaviour:
   CinemachineCameraTarget: {fileID: 4135013735270702863}
   TopClamp: 89
   BottomClamp: -89
+  CrouchCameraPosition: 0.528
   _footStepsSource: {fileID: 1333838734}
   _interaction: {fileID: 135756641613574980}
+  _interactor: {fileID: 2112008601947533516}
+  hidden: 0
 --- !u!114 &1978471637655604388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3875,12 +3902,18 @@ MonoBehaviour:
   jump: 0
   sprint: 0
   interact: 0
+  crouch: 0
+  light: 0
+  openInventory: 0
   analogMovement: 0
   cursorLocked: 1
   cursorInputForLook: 1
   action: 0
   altAction: 0
   Interaction: {fileID: 135756641613574980}
+  Light: {fileID: 2677650124856103485}
+  Inventory: {fileID: 5317797228358738936}
+  GrabMethods: {fileID: 0}
 --- !u!114 &8616685848737228376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3992,30 +4025,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02bf2d5ec5358bc4e97641d150c64051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MonsterGrabManager: {fileID: 0}
   layerMaskInteract:
     serializedVersion: 2
     m_Bits: 1024
-  ObjectGrab:
-    m_FreezeRotation: 0
-    m_PickupRange: 3
-    m_ThrowStrength: 50
-    m_distance: 3
-    m_maxDistanceGrab: 4
-  ItemGrab:
-    m_FreezeRotation: 0
-    m_ItemPickupRange: 2
-    m_ItemThrow: 45
-    m_ItemDistance: 1
-    m_ItemMaxGrab: 2.5
-  DoorGrab:
-    m_DoorPickupRange: 2
-    m_DoorThrow: 10
-    m_DoorDistance: 2
-    m_DoorMaxGrab: 3
-  Tags:
-    m_InteractTag: Interact
-    m_InteractItemsTag: InteractItem
-    m_DoorsTag: Door
+  _distanceMax: 3
+  _hand: {fileID: 0}
   interactRange: 4
   distance: 3
   maxDistanceGrab: 4
@@ -4059,12 +4074,95 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8616685848737228372}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
+  serializedVersion: 2
   m_Radius: 0.4
   m_Height: 1.9
   m_Direction: 1
   m_Center: {x: 0, y: 0.9, z: 0}
+--- !u!114 &2677650124856103485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8616685848737228372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4be82e18e5f1afc4fa84d46861c3349a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _light: {fileID: 1214601248}
+--- !u!114 &5317797228358738936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8616685848737228372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74606dce27f59e942be5f7f27b52a8cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PersonController: {fileID: 8616685848737228371}
+  InventoryManager: {fileID: 0}
+  _inventory: {fileID: 0}
+--- !u!114 &2112008601947533516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8616685848737228372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61d2dad716d44757a7bdfc4306b14909, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _distanceMax: 6
+  _hand: {fileID: 0}
+  layerMaskInteract:
+    serializedVersion: 2
+    m_Bits: 1024
+--- !u!114 &2027883428517278628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8616685848737228372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2adcd95fb6660495f9d5f7d77229fe38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  move: {x: 0, y: 0}
+  look: {x: 0, y: 0}
+  jump: 0
+  sprint: 0
+  interact: 0
+  crouch: 0
+  lightState: 0
+  openInventory: 0
+  analogMovement: 0
+  cursorLocked: 1
+  cursorInputForLook: 1
+  action: 0
+  altAction: 0
+  interaction: {fileID: 135756641613574980}
+  lightController: {fileID: 2677650124856103485}
+  inventory: {fileID: 5317797228358738936}
+  grabMethods: {fileID: 0}
 --- !u!1 &9090776520287054503
 GameObject:
   m_ObjectHideFlags: 0
