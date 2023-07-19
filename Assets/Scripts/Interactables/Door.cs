@@ -52,7 +52,7 @@ namespace Interactables
             if (!_isMove) return;
 
             _hinge.limits = new JointLimits() { min = _startLimitsMin, max = _startLimitsMax };
-            _rigidbody.AddForceAtPosition(_camera.forward * _input.look.y * _force, HitPos);
+            _rigidbody.AddForceAtPosition(_camera.forward * -_input.look.x * _force, HitPos);
         }
 
         public override void InteractStart(RaycastHit hit)
