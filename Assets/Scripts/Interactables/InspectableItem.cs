@@ -3,40 +3,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InspectableItem : MonoBehaviour
+namespace Interactables
 {
-    public bool isInspecting = false;
-    
-    [SerializeField] private float distance = 1;
-    [SerializeField] private float smooth = 1;
-    [SerializeField] private Transform cameraTransform;
-    
-    private Vector3 initialPosition;
-    private Quaternion initialRotation;
-    
-    void Start()
+    public class InspectableItem : MonoBehaviour
     {
-        initialPosition = transform.position;
-        initialRotation = transform.rotation;
-    }
+        public bool isInspecting = false;
 
-    private void Update()
-    {
-        if (isInspecting)
+        [SerializeField] private float distance = 1;
+        [SerializeField] private float smooth = 1;
+        [SerializeField] private Transform cameraTransform;
+
+        private Vector3 initialPosition;
+        private Quaternion initialRotation;
+
+        void Start()
         {
-            transform.LookAt(cameraTransform);
-            // transform.position = Vector3.Lerp(transform.position, cameraTransform.position + cameraTransform.forward * distance, Time.deltaTime * smooth);
-            transform.position = cameraTransform.position + cameraTransform.forward * distance;
+            initialPosition = transform.position;
+            initialRotation = transform.rotation;
         }
-    }
 
-    public void Inspect(bool shouldInspect)
-    {
-        isInspecting = shouldInspect;
-        if (!shouldInspect)
+        private void Update()
         {
-            transform.position = initialPosition;
-            transform.rotation = initialRotation;
+            if (isInspecting)
+            {
+                transform.LookAt(cameraTransform);
+                // transform.position = Vector3.Lerp(transform.position, cameraTransform.position + cameraTransform.forward * distance, Time.deltaTime * smooth);
+                transform.position = cameraTransform.position + cameraTransform.forward * distance;
+            }
+        }
+
+        public void Inspect(bool shouldInspect)
+        {
+            isInspecting = shouldInspect;
+            if (!shouldInspect)
+            {
+                transform.position = initialPosition;
+                transform.rotation = initialRotation;
+            }
         }
     }
 }
